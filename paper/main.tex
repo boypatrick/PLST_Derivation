@@ -1263,7 +1263,27 @@ B_N
 }
 \label{eq:BN}
 \end{equation}
-Equivalently,
+For the operator notation in the equivalent form, define the linear visible-overlap functional
+\begin{equation}
+\mathcal O_{\rm vis}:\cH_{\rm gen}\longrightarrow\mathbb C,
+\qquad
+(\mathcal O_{\rm vis}u)
+=
+y_0
+\int_{\mathbb R^3}
+\left\langle
+\mathcal J_{\rm vis}(x;D,\varepsilon),
+\pi_D^*u(x)
+\right\rangle_{\widehat h_R}
+\dd\mu_{\rm cyl}(x).
+\label{eq:Ovis_def}
+\end{equation}
+This uses the opposite pairing order from Eq.~\eqref{eq:y_eff}, so it is linear in \(u\) under the stated Hermitian convention.
+The two overlap conventions differ only by pairing order and conjugation convention and give
+\begin{equation}
+|\mathcal O_{\rm vis}u_N|^2=|y_N^{\rm eff}|^2.
+\end{equation}
+Thus \(\mathcal O_{\rm vis}^\dagger\mathcal O_{\rm vis}\) is the induced rank-one positive operator on \(\cH_{\rm gen}\), and equivalently
 \begin{equation}
 B_N
 =

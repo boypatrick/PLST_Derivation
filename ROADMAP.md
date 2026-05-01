@@ -552,7 +552,13 @@ Acceptance criteria:
 ### R21. Define the `O_vis` Functional
 
 Priority: low-medium.
-Status: pending.
+Status: completed.
+Resolution: The visibility section now defines the linear functional
+`O_vis: H_gen -> C` using the pairing order `<J_vis,pi_D^*u>`, so the
+operator notation `O_vis^\dagger O_vis` is explicitly the induced rank-one
+positive operator on `H_gen`.  The text states that this linear convention and
+the invariant `y_N^eff` convention differ only by pairing order/conjugation and
+give the same normalized `B_N`.
 
 Define the operator notation used in the equivalent visibility formula.  The
 cleanest convention is to define a linear functional
@@ -579,6 +585,8 @@ Acceptance criteria:
   invariant `y_N^eff` visibility formula.
 
 ### Post-R21 Freeze
+
+Status: active.
 
 After R20 and R21 are completed, stop changing the theory structure unless a
 new concrete mathematical error is found.  The next phase should be limited to
@@ -611,3 +619,5 @@ tone, symbol consistency, and PDF visual QA.
 - Do not treat the antilinearity of `y_N^eff` under the chosen Hermitian
   convention as a physical ambiguity in `B_N`; the normalized visibility uses
   `|y_N^eff|^2`.
+- Do not use `O_vis^\dagger O_vis` without defining `O_vis` as the visible
+  overlap functional on `H_gen`.
