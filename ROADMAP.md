@@ -290,6 +290,89 @@ probability formulas.
   projection, and `P_N(t)` for probabilities.
 - Use `g_N^{chiral}` when discussing protected zero-mode degeneracy.
 
+## Post-R10 Review Tasks
+
+The latest review confirms that the Spin^c zero-mode theorem and product Dirac
+reduction are now structurally sound.  Several comments in that review refer to
+items already closed in R4-R10 (`pi_D`, `eta`, `S_proj`, `E_Omega`, Schur gap,
+WKB barrier, anomaly checks, and notation hygiene).  Do not reopen those unless
+a new, concrete mathematical error is found.
+
+### R11. Define the Generation-to-Spatial Mode Assignment
+
+Priority: high.
+Status: pending.
+
+The remaining real interface gap is the relation between:
+
+```text
+u_N in H^0(C,L_R)
+```
+
+and scalar spatial eigenmodes
+
+```text
+[-nabla^2 + V_eff] psi_n = omega_n^2 psi_n.
+```
+
+Add a dedicated subsection before the kinetic definitions:
+
+```text
+Generation-to-spatial mode assignment.
+```
+
+Define either a mode-locking map
+
+```text
+I_D: H^0(C,L_R) -> H_Omega^scalar
+```
+
+or an assignment
+
+```text
+N -> n(N;D),
+u_N -> psi_{n(N)}(.;D),
+omega_N := omega_{n(N)}.
+```
+
+State explicitly:
+
+- the Spin^c theorem fixes the three protected generation modes `u_N`;
+- the scalar sector supplies only formation and visibility data;
+- `Gamma_N`, `omega_N`, and `|N,pm>` use scalar data only after this
+  mode-locking prescription;
+- `u_N` and `psi_n` are not the same object.
+
+### R12. Upgrade Visibility to a Bundle-Valued Pairing
+
+Priority: medium.
+Status: pending.
+
+The current visibility integral is acceptable in a local trivialization, but it
+should be made geometrically invariant.  Since `u_N` is a section of `L_R`, its
+pullback satisfies
+
+```text
+u_hat_N in Gamma(pi_D^* L_R).
+```
+
+Rewrite the visible overlap as a Hermitian pairing on the pullback bundle:
+
+```text
+y_N^eff =
+  y_0 int_{R^3} <u_hat_N, J_vis>_{pi_D^* L_R} dmu_cyl.
+```
+
+Then state that the local formula with
+
+```text
+overline{u_hat_N} f_L f_R W_frame
+```
+
+is a trivialized representative where `W_frame` contains the bundle frame,
+Hermitian metric, Jacobian, angular-channel projection, and any remaining
+complex conjugation convention.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
@@ -299,3 +382,5 @@ probability formulas.
 - Do not use `ind D_vec = 0` alone as a no-light-exotics condition.
 - Do not let the scalar spectral operator replace the Spin^c fermion zero-mode
   theorem for the generation count.
+- Do not silently identify the Spin^c generation basis `u_N` with the scalar
+  spatial eigenmodes `psi_n`; use the explicit R11 mode-locking map.
