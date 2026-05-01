@@ -910,14 +910,13 @@ The projection map \(\pi_D\) pulls the generation bundle to the spatial chart:
 \Gamma(\mathbb R^3,\widehat L_R).
 \label{eq:pullback_generation_bundle}
 \end{equation}
-To attach scalar barrier data to a protected generation, introduce a scalarization operator
+To attach scalar barrier data to a protected generation, introduce the linear raw scalarization operator
 \begin{equation}
 \boxed{
-\mathcal C_D:\cH_{\rm gen}\longrightarrow \cH_\Omega(D),
+\widetilde{\mathcal C}_D:\cH_{\rm gen}\longrightarrow \cH_\Omega(D),
 \qquad
-\mathcal C_Du
+\widetilde{\mathcal C}_Du
 =
-\mathcal N_D(u)^{-1}
 w_D^{1/2}\,
 \left\langle
 \mathfrak j_D,
@@ -926,8 +925,19 @@ w_D^{1/2}\,
 }
 \label{eq:scalarization_operator}
 \end{equation}
-Here \(\mathfrak j_D\in\Gamma(\mathbb R^3,\widehat L_R)\) is the locking/probe section supplied by the two-center projection data, \(w_D\ge0\) is a scalar density weight, and \(\mathcal N_D(u)\) normalizes the profile in \(\cH_\Omega(D)\).
-The scalarization is assumed nonzero on the protected modes \(u_N\).
+Here \(\mathfrak j_D\in\Gamma(\mathbb R^3,\widehat L_R)\) is the locking/probe section supplied by the two-center projection data, and \(w_D\ge0\) is a scalar density weight.
+With our convention that the Hermitian pairing is antilinear in the first entry and linear in the second, \(\widetilde{\mathcal C}_D\) is linear in \(u\).
+The raw scalar profile is assumed nonzero on the protected modes \(u_N\).
+The normalized profile map is the generally nonlinear map
+\begin{equation}
+\boxed{
+c_D(u)
+=
+\frac{\widetilde{\mathcal C}_Du}
+{\|\widetilde{\mathcal C}_Du\|_{\cH_\Omega(D)}}.
+}
+\label{eq:normalized_scalar_profile}
+\end{equation}
 The spectral weights of a generation mode against scalar eigenmodes are
 \begin{equation}
 \boxed{
@@ -936,7 +946,7 @@ The spectral weights of a generation mode against scalar eigenmodes are
 \left|
 \left\langle
 \psi_n(\cdot;D),
-\mathcal C_Du_N
+c_D(u_N)
 \right\rangle_{\cH_\Omega(D)}
 \right|^2.
 }
@@ -948,7 +958,7 @@ If the scalar operator has a continuous component, Eq.~\eqref{eq:spectral_weight
 \dd\mu_N^D(\lambda)
 =
 \left\|
-\dd E_\lambda(D)\,\mathcal C_Du_N
+\dd E_\lambda(D)\,c_D(u_N)
 \right\|_{\cH_\Omega(D)}^2.
 \label{eq:spectral_measure}
 \end{equation}
@@ -990,7 +1000,7 @@ or, for a continuous spectral component,
 \label{eq:soft_rate_continuous}
 \end{equation}
 Here \(\Gamma_n\) is the scalar-mode formation rate for the \(n\)th eigenmode, computed by the same two-center Schur/WKB construction.
-Thus the Spin\(^c\) theorem fixes \(u_N\), while \(\mathcal C_D\), \(\mu_{nN}\), and, only under Eq.~\eqref{eq:locking_gap}, \(\mathcal I_D\), supply the scalar formation interface.
+Thus the Spin\(^c\) theorem fixes \(u_N\), while \(\widetilde{\mathcal C}_D\), \(c_D\), \(\mu_{nN}\), and, only under Eq.~\eqref{eq:locking_gap}, \(\mathcal I_D\), supply the scalar formation interface.
 All hard-locking quantities \(\omega_N\), \(\Gamma_N\), and \(|N,\pm\rangle\) below are understood only after Eq.~\eqref{eq:locking_gap}; otherwise \(\Gamma_N\) in the final probability law should be replaced by \(\Gamma_N^{\rm soft}\).
 
 For kinetics in the hard-locking regime, the locked scalar mode \(\psi_N^{\rm lock}\) and the two centers define a collective-coordinate subspace
@@ -1252,7 +1262,7 @@ The bundle \(L_R\) is the auxiliary Dolbeault twist, and the positive and negati
 Riemann--Roch gives index three, and Serre duality gives \(H^1(C,L_R)=0\).
 With all additional SM-charged sectors either absent from the kernel or fully paired by a gauge-invariant mass map, the theory therefore has exactly three low-energy chiral SM generations and no unpaired light SM-charged exotics.
 
-After the scalarization map \(\mathcal C_D\), the spectral weights \(\mu_{nN}\), and, when the locking gap exists, the hard map \(\mathcal I_D:u_N\mapsto\psi_N^{\rm lock}\), the scalar two-center spectral operator and the quantities \((g_N^{\rm chiral},\Gamma_N,B_N,P_N)\) define an effective model for how these three protected modes form and couple to the visible sector.
+After the raw scalarization operator \(\widetilde{\mathcal C}_D\), the normalized profile map \(c_D\), the spectral weights \(\mu_{nN}\), and, when the locking gap exists, the hard map \(\mathcal I_D:u_N\mapsto\psi_N^{\rm lock}\), the scalar two-center spectral operator and the quantities \((g_N^{\rm chiral},\Gamma_N,B_N,P_N)\) define an effective model for how these three protected modes form and couple to the visible sector.
 They are coarse-grained phenomenological structures on top of the Spin\(^c\) generation theorem, not substitutes for it.
 
 \begin{acknowledgments}

@@ -304,8 +304,8 @@ Priority: high.
 Status: completed.
 Resolution: Section IX now separates the generation Hilbert space
 `H_gen=H^0(C,L_R)` from the scalar spatial Hilbert space `H_Omega(D)`,
-defines the scalarization operator `C_D:H_gen -> H_Omega(D)`, introduces
-spectral weights `mu_{nN}=|<psi_n,C_D u_N>|^2`, and treats the hard map
+defines the raw scalarization operator/profile map interface, introduces
+spectral weights `mu_{nN}=|<psi_n,c_D(u_N)>|^2`, and treats the hard map
 `I_D(u_N)=psi_{n(N;D)}` only as the isolated-maximum/gap limit.
 
 The remaining real interface gap is the relation between:
@@ -389,8 +389,9 @@ complex conjugation convention.
 
 Priority: high.
 Status: completed.
-Resolution: The hard locking map is now derived only after defining `C_D`,
-the scalar spectral weights `mu_{nN}`, and the gap condition
+Resolution: The hard locking map is now derived only after defining the raw
+scalarization operator/profile map interface, the scalar spectral weights
+`mu_{nN}`, and the gap condition
 `mu_{n(N),N} - sup_{m != n(N)} mu_{mN} >= Delta_lock`.  If the gap condition
 fails, the paper uses a soft assignment
 `Gamma_N^soft=sum_n mu_{nN} Gamma_n`, or the corresponding spectral-measure
@@ -399,8 +400,8 @@ integral for continuous spectrum.
 Acceptance criteria:
 
 - `u_N`, `u_hat_N`, and `psi_n` live in explicitly distinct spaces.
-- The interface from generation zero modes to scalar profiles is `C_D`, not a
-  silent identification of bases.
+- The interface from generation zero modes to scalar profiles is explicit, not
+  a silent identification of bases.
 - `I_D` and `psi_N^lock` appear only after an isolated maximum/gap condition.
 - The probability law states how to replace `Gamma_N` by `Gamma_N^soft` when
   hard locking fails.
@@ -421,6 +422,24 @@ Acceptance criteria:
 - The hard/soft distinction is stated before the abstract interprets the
   formation/visibility weights.
 
+### R15. Linear Scalarization Map
+
+Priority: high/medium.
+Status: completed.
+Resolution: Section IX now separates the linear raw scalarization operator
+`Ctilde_D u = w_D^{1/2}<j_D,pi_D^*u>_{h_hat_R}` from the normalized profile map
+`c_D(u)=Ctilde_D u / ||Ctilde_D u||_{H_Omega(D)}`.  The scalar spectral weights
+and spectral measure now use `c_D(u_N)`, so the word "operator" is reserved for
+the linear map.
+
+Acceptance criteria:
+
+- The normalization factor is not included in the linear scalarization
+  operator.
+- `mu_{nN}` is computed with the normalized profile `c_D(u_N)`.
+- The text states that `c_D` is generally nonlinear, while `Ctilde_D` is linear
+  under the stated Hermitian-pairing convention.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
@@ -432,6 +451,9 @@ Acceptance criteria:
   theorem for the generation count.
 - Do not silently identify the Spin^c generation basis `u_N` with the scalar
   spatial eigenmodes `psi_n`; use the explicit scalarization weights
-  `C_D, mu_{nN}` and introduce hard locking only under the gap condition.
+  `Ctilde_D, c_D, mu_{nN}` and introduce hard locking only under the gap
+  condition.
 - Do not use `psi_N` or `omega_N` in the abstract before the hard-locking
   condition has been stated.
+- Do not call a normalization-dependent profile map linear; keep the raw
+  scalarization operator separate from the normalized profile.
