@@ -517,6 +517,68 @@ Acceptance criteria:
 - The text states that using `<J_vis,u_hat_N>` gives a linear-in-`u_N`
   convention and leaves `B_N` unchanged.
 
+### R20. Axis-Domain Caveat for `pi_D`
+
+Priority: low-medium.
+Status: pending.
+
+Add a short caveat near the explicit projection map
+
+```text
+zeta_R = sqrt(r_+/r_-) exp(i phi)
+```
+
+explaining that the cylindrical formula is defined away from the axial
+coordinate singularity `rho=0`.  The axial set is measure zero for the
+visibility integrals, and the pullback construction may equivalently be read
+in an `L^2` almost-everywhere sense or as the limit of a smooth axial phase
+regularization.
+
+Acceptance criteria:
+
+- The paper states that the displayed cylindrical formula for `pi_D` is defined
+  on `R^3 \ {rho=0}` before extension/regularization.
+- The text explains that the axial set does not affect the `L^2` visibility
+  integrals.
+- The text gives an acceptable interpretation: almost-everywhere pullback or
+  smooth axial regularization.
+
+### R21. Define the `O_vis` Functional
+
+Priority: low-medium.
+Status: pending.
+
+Define the operator notation used in the equivalent visibility formula.  The
+cleanest convention is to define a linear functional
+
+```text
+(O_vis u) =
+  y_0 int_{R^3} <J_vis, pi_D^*u>_{h_hat_R} dmu_cyl,
+```
+
+so that `O_vis: H_gen -> C` is the visible overlap functional and
+`O_vis^\dagger O_vis` is the induced rank-one positive operator on
+`H_gen`.  This should be connected explicitly to the already stated
+anti-linear pairing convention: the current `y_N^eff` and the linear
+`O_vis u_N` differ only by pairing order/conjugation convention and give the
+same normalized `B_N`.
+
+Acceptance criteria:
+
+- The paper defines `O_vis: H_gen -> C` before using
+  `O_vis^\dagger O_vis`.
+- The definition uses the linear-in-`u` pairing order
+  `<J_vis,pi_D^*u>`.
+- The text states that this operator notation induces the same `B_N` as the
+  invariant `y_N^eff` visibility formula.
+
+### Post-R21 Freeze
+
+After R20 and R21 are completed, stop changing the theory structure unless a
+new concrete mathematical error is found.  The next phase should be limited to
+final proofreading: layout, references, citation style, abstract/conclusion
+tone, symbol consistency, and PDF visual QA.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
