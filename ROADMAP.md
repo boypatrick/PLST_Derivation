@@ -478,6 +478,25 @@ Acceptance criteria:
 - The projection-valued measure `dE_lambda(D)` is identified as the spectral
   measure of that operator.
 
+### R18. Uniform Effective Formation Rate
+
+Priority: medium-high.
+Status: completed.
+Resolution: The body probability law now uses `Gamma_N^eff(D,eta)` directly,
+matching the abstract.  The text defines `Gamma_N^eff=Gamma_N` in the
+hard-locking regime and `Gamma_N^eff=Gamma_N^soft` otherwise, then uses this
+same effective rate in the Markovian formation ODE, its solution, and the
+conditional probability formula.
+
+Acceptance criteria:
+
+- The final probability law uses `Gamma_N^eff(D,eta)` rather than the
+  hard-locking-only `Gamma_N(D,eta)`.
+- `Gamma_N` remains the Schur/WKB rate defined only in the hard-locking
+  regime.
+- The soft-assignment rate is incorporated through the single definition of
+  `Gamma_N^eff`, not by a trailing replacement sentence.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
@@ -499,3 +518,5 @@ Acceptance criteria:
   index count; they belong to the effective formation/visibility layer.
 - Do not use the scalar spectral measure `dE_lambda(D)` without specifying the
   self-adjoint realization of `L_Omega(D)`.
+- Do not write the final body probability law with the hard-locking-only
+  `Gamma_N`; use `Gamma_N^eff` and define its hard/soft cases.
