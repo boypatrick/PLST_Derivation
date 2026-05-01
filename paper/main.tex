@@ -163,25 +163,41 @@ S_{\rm grav}
 +S_{\rm vis}.
 \label{eq:parent_action}
 \end{equation}
-The projection sector fixes the topological class of \(L_R\):
+The projection sector fixes the topological class of \(L_R\), not a pointwise equality between a smooth curvature form and a delta-current.
+The robust condition is the cohomological constraint
 \begin{equation}
-S_{\rm proj}
+\boxed{
+\left[\frac{\ii}{2\pi}F_{A_R}\right]
 =
-\int_C\lambda_R
-\left[
-\frac{\ii}{2\pi}F_{A_R}
--\delta_{p_+}^{(2)}
--\delta_{p_-}^{(2)}
-\right],
-\label{eq:Sproj}
+\operatorname{PD}(R)
+=
+[p_+]+[p_-]
+\in H^2(C,\mathbb Z),
+\qquad
+R=p_+ + p_-.
+}
+\label{eq:Sproj_cohomology}
 \end{equation}
-so that
+Equivalently,
 \begin{equation}
-c_1(L_R)=[p_+]+[p_-],
+c_1(L_R)=\operatorname{PD}(R),
 \qquad
 \deg L_R=2.
 \label{eq:degree_LR}
 \end{equation}
+When an action-like expression is useful, it should be read as a topological constraint or as a regulated current limit:
+\begin{equation}
+S_{\rm proj}^{\rm top}
+=
+\int_C\lambda_R
+\left[
+\frac{\ii}{2\pi}F_{A_R}
+-J_R^{(\varepsilon)}
+\right],
+\label{eq:Sproj}
+\end{equation}
+where \(J_R^{(\varepsilon)}\) is any smooth representative of \(\operatorname{PD}(R)\) that tends, as a current, to \(\delta_{p_+}^{(2)}+\delta_{p_-}^{(2)}\).
+The first-principles input is Eq.~\eqref{eq:Sproj_cohomology}; Eq.~\eqref{eq:Sproj} is only a regulated implementation of the same topological class.
 
 \subsection{SM-charged fermion sector}
 \label{sec:sm_fermion_sector}
@@ -564,9 +580,68 @@ The family count is basis-independent; the labels \(N=1,2,3\) require a canonica
 \section{Canonical Generation Basis}
 \label{sec:canonical_basis}
 
+The two branch points alone determine the divisor and the family count, but a physical basis also needs the normalization of the affine coordinate on \(C\).
+Placing \(p_+\) at \(0\) and \(p_-\) at \(\infty\) leaves the residual freedom \(\zeta_R\mapsto a\zeta_R\).
+In PSLT this freedom is fixed by the two-center projection map from the spatial chart to the compact projection surface.
+
+\subsection{Projection map and coordinate normalization}
+\label{sec:projection_map}
+
+Let \((\rho,z_{\rm ax},\varphi)\) be cylindrical coordinates on \(\mathbb R^3\), with the ordered centers
+\begin{equation}
+x_\pm:\quad \rho=0,\qquad z_{\rm ax}=\pm D/2.
+\label{eq:spatial_centers}
+\end{equation}
+With regulator \(\varepsilon>0\), define
+\begin{equation}
+r_\pm
+=
+\sqrt{\rho^2+(z_{\rm ax}\mp D/2)^2+\varepsilon^2}.
+\label{eq:rpm_projection}
+\end{equation}
+The physical affine coordinate is
+\begin{equation}
+\boxed{
+\zeta_R(\rho,z_{\rm ax},\varphi;D,\varepsilon)
+=
+\left(\frac{r_+}{r_-}\right)^{1/2}\ee^{\ii\varphi}.
+}
+\label{eq:zeta_projection}
+\end{equation}
+The projection map is
+\begin{equation}
+\boxed{
+\pi_D:\mathbb R^3\longrightarrow C\simeq\CP^1,
+\qquad
+\pi_D(\rho,z_{\rm ax},\varphi)
+=
+[1:\zeta_R(\rho,z_{\rm ax},\varphi;D,\varepsilon)].
+}
+\label{eq:piD_def}
+\end{equation}
+In the collapsed-core limit \(\varepsilon\to0\),
+\begin{equation}
+\pi_D(x_+)=p_+=[1:0],
+\qquad
+\pi_D(x_-)=p_-=[0:1].
+\label{eq:piD_centers}
+\end{equation}
+For finite \(\varepsilon\), the source cores are mapped to regulated neighborhoods of the branch points.
+The normalization is fixed by the midplane condition
+\begin{equation}
+z_{\rm ax}=0
+\quad\Longrightarrow\quad
+|\zeta_R|=1,
+\label{eq:zeta_midplane}
+\end{equation}
+and the residual \(U(1)\) phase is fixed by the origin of the axial angle \(\varphi\).
+Thus the earlier scale freedom \(\zeta_R\mapsto a\zeta_R\) is removed by the physical projection geometry rather than by an arbitrary Gram--Schmidt convention.
+
+\subsection{Toeplitz basis}
+\label{sec:toeplitz_basis}
+
 Let \(P_R\) be the Bergman projector from \(L^2(C,L_R)\) onto \(H^0(C,L_R)\), using the Fubini--Study metric on \(C=\CP^1\) and the induced Hermitian metric on \(L_R\).
-Choose a Möbius coordinate \(\zeta_R\) adapted to the two-center divisor, so that the two branch points are placed at \(0\) and \(\infty\).
-The associated axial moment-map function is
+Using the coordinate \(\zeta_R\) fixed by Eq.~\eqref{eq:zeta_projection}, the associated axial moment-map function is
 \begin{equation}
 \mu_R(\zeta_R,\bar\zeta_R)
 =
@@ -756,7 +831,31 @@ For kinetics, the two centers define a collective-coordinate subspace
 \begin{equation}
 \cC_N=\Span\{|N,+\rangle,\ |N,-\rangle\}.
 \end{equation}
-Let \(P_N^{\rm cc}\) project onto \(\cC_N\), \(Q_N^{\rm cc}=1-P_N^{\rm cc}\), and let \(\cK_N\) be the Euclidean fluctuation operator in this sector.
+Let \(P_N^{\rm cc}\) project onto \(\cC_N\), \(Q_N^{\rm cc}=1-P_N^{\rm cc}\), and let \(\cK_N(D,\eta)\) be the Euclidean fluctuation operator in this sector.
+The dimensionless parameter \(\eta\) denotes the two-center overlap controlling kinetic mixing.
+For the regulated source model, we take
+\begin{equation}
+\boxed{
+\eta(D,\varepsilon)
+=
+\int_{\mathbb R^3}\dd^3x\,
+\sqrt{
+\rho_\varepsilon(x-x_+)\rho_\varepsilon(x-x_-)
+},
+\qquad
+0\le \eta\le1.
+}
+\label{eq:eta_def}
+\end{equation}
+It enters the fluctuation operator, WKB prefactors, and center mixing coefficient:
+\begin{equation}
+\cK_N=\cK_N(D,\eta),
+\qquad
+A_{N,\pm}=A_{N,\pm}(D,\eta),
+\qquad
+\chi_N=\chi_N(D,\eta).
+\label{eq:eta_dependencies}
+\end{equation}
 The Feshbach--Schur effective matrix is
 \begin{equation}
 \cM_N
@@ -810,13 +909,14 @@ where
 }.
 \end{equation}
 
-For visibility, let \(\pi_D:\mathbb R^3\to C\) denote the projection map from the spatial two-center chart to the compact projection surface, and let
+For visibility, use the projection map \(\pi_D\) defined in Eq.~\eqref{eq:piD_def} and let
 \begin{equation}
-\widehat u_N(\rho,z_{\rm ax};D)
+\widehat u_N(\rho,z_{\rm ax},\varphi;D,\varepsilon)
 =
-u_N(\pi_D(\rho,z_{\rm ax}))
+u_N(\pi_D(\rho,z_{\rm ax},\varphi)).
+\label{eq:uN_pullback}
 \end{equation}
-with the frame/Jacobian factors included in \(W_{\rm frame}\).
+The \(\varphi\)-dependence is therefore not discarded; in axially reduced formulas it has already been projected into the selected angular channel and absorbed into the frame/Jacobian factor \(W_{\rm frame}\).
 The conformal Dirac and Higgs fields scale as
 \begin{equation}
 \Psi=\Omega^{-3/2}\psi,
@@ -834,15 +934,23 @@ Hence
 \end{equation}
 A mode-resolved Yukawa overlap may therefore be written
 \begin{equation}
-y_N^{\rm eff}(D)
-=
-y_0\int 2\pi\rho\,\dd\rho\,\dd z_{\rm ax}\,
-\widehat u_N(\rho,z_{\rm ax};D)
+\begin{aligned}
+y_N^{\rm eff}(D,\varepsilon)
+=\;&
+y_0
+\int_0^\infty \rho\,\dd\rho
+\int_{-\infty}^{\infty}\dd z_{\rm ax}
+\int_0^{2\pi}\dd\varphi\,
+\overline{\widehat u_N(\rho,z_{\rm ax},\varphi;D,\varepsilon)}
+\\
+&\times
 f_L(\rho,z_{\rm ax})
 f_R(\rho,z_{\rm ax})
-W_{\rm frame}.
+W_{\rm frame}(\rho,z_{\rm ax},\varphi;D,\varepsilon).
+\end{aligned}
 \label{eq:y_eff}
 \end{equation}
+When the visible kernel has already been reduced to an \(m=0\) axial channel, Eq.~\eqref{eq:y_eff} reduces to the earlier \(2\pi\rho\,\dd\rho\,\dd z_{\rm ax}\) form with the angular integral included in \(W_{\rm frame}\).
 The normalized visible weight is
 \begin{equation}
 \boxed{

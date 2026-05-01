@@ -127,6 +127,11 @@ This prevents confusion between the Dolbeault index
 ### R4. Make S_proj a Cohomological Constraint
 
 Priority: high.
+Status: completed.
+Resolution: `S_proj` is now formulated first as the cohomological condition
+`[i F_{A_R}/(2 pi)] = PD(R) = [p_+] + [p_-]`.  The action-like expression is
+kept only as a regulated current implementation using a smooth representative
+`J_R^(epsilon)`.
 
 Avoid reading the current `S_proj` as a pointwise smooth curvature equation.
 State the robust condition:
@@ -143,6 +148,10 @@ currents.
 ### R5. Fix the Canonical Basis Normalization
 
 Priority: high.
+Status: completed.
+Resolution: the residual scale in `zeta_R -> a zeta_R` is fixed by the physical
+projection map `pi_D`; the midplane condition `z_ax = 0 => |zeta_R| = 1` fixes
+the real scale, and the axial-angle origin fixes the residual phase.
 
 The coordinate choice placing `p_+ -> 0` and `p_- -> infinity` leaves a residual
 scale freedom `zeta_R -> a zeta_R`.  This changes the moment map unless the scale
@@ -164,6 +173,13 @@ Then `T_R = P_R M_{mu_R} P_R` is genuinely canonical.
 ### R6. Define the Projection Map pi_D and the Parameter eta
 
 Priority: high.
+Status: completed.
+Resolution: `pi_D` is defined by
+`zeta_R = sqrt(r_+/r_-) exp(i phi)` and maps the regulated two-center spatial
+chart to `CP^1`, with `x_+ -> p_+` and `x_- -> p_-` in the collapsed-core limit.
+The parameter `eta(D,epsilon)` is defined as the source-overlap integral
+`int d^3x sqrt(rho_epsilon(x-x_+) rho_epsilon(x-x_-))` and enters `K_N`,
+`A_{N,pm}`, and `chi_N`.
 
 Add a subsection defining
 
