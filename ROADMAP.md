@@ -351,7 +351,13 @@ State explicitly:
 ### R12. Upgrade Visibility to a Bundle-Valued Pairing
 
 Priority: medium.
-Status: pending.
+Status: completed.
+Resolution: Section IX now treats `u_hat_N` as a pullback section
+`pi_D^*u_N in Gamma(R^3, pi_D^*L_R)`, introduces the pullback Hermitian
+metric `h_hat_R`, and writes `y_N^eff` as the invariant pairing
+`int <u_hat_N,J_vis>_{h_hat_R} dmu_cyl`.  The older
+`overline{u_hat_N} f_L f_R W_frame` expression is retained only as a local
+trivialized representative.
 
 The current visibility integral is acceptable in a local trivialization, but it
 should be made geometrically invariant.  Since `u_N` is a section of `L_R`, its

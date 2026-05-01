@@ -1015,14 +1015,28 @@ where
 }.
 \end{equation}
 
-For visibility, use the projection map \(\pi_D\) defined in Eq.~\eqref{eq:piD_def} and let
+For visibility, use the projection map \(\pi_D\) defined in Eq.~\eqref{eq:piD_def}.
+Since \(u_N\) is a section of \(L_R\), its spatial representative is not a scalar function in an invariant formulation.
+It is the pullback section
 \begin{equation}
-\widehat u_N(\rho,z_{\rm ax},\varphi;D,\varepsilon)
-=
-u_N(\pi_D(\rho,z_{\rm ax},\varphi)).
+\widehat L_R:=\pi_D^*L_R,
+\qquad
+\widehat h_R:=\pi_D^*h_R,
+\qquad
+\widehat u_N:=\pi_D^*u_N
+\in
+\Gamma(\mathbb R^3,\widehat L_R),
 \label{eq:uN_pullback}
 \end{equation}
-The \(\varphi\)-dependence is therefore not discarded; in axially reduced formulas it has already been projected into the selected angular channel and absorbed into the frame/Jacobian factor \(W_{\rm frame}\).
+where \(h_R\) is the Hermitian metric on \(L_R\).
+The visible kernel is correspondingly a bundle-valued source
+\begin{equation}
+\mathcal J_{\rm vis}(D,\varepsilon)
+\in
+\Gamma(\mathbb R^3,\widehat L_R).
+\label{eq:Jvis_bundle}
+\end{equation}
+The \(\varphi\)-dependence is therefore not discarded; in axially reduced formulas it has already been projected into the selected angular channel and absorbed into the chosen representative of \(\mathcal J_{\rm vis}\) and the measure factor.
 The conformal Dirac and Higgs fields scale as
 \begin{equation}
 \Psi=\Omega^{-3/2}\psi,
@@ -1038,7 +1052,49 @@ Hence
 \Omega^0.
 \label{eq:weyl_yukawa}
 \end{equation}
-A mode-resolved Yukawa overlap may therefore be written
+A mode-resolved Yukawa overlap is the Hermitian pairing on the pullback bundle:
+\begin{equation}
+\boxed{
+y_N^{\rm eff}(D,\varepsilon)
+=
+y_0
+\int_{\mathbb R^3}
+\left\langle
+\widehat u_N(x;D,\varepsilon),
+\mathcal J_{\rm vis}(x;D,\varepsilon)
+\right\rangle_{\widehat h_R}
+\dd\mu_{\rm cyl}(x),
+}
+\label{eq:y_eff}
+\end{equation}
+with
+\begin{equation}
+\dd\mu_{\rm cyl}
+=
+\rho\,\dd\rho\,\dd z_{\rm ax}\,\dd\varphi.
+\label{eq:cyl_measure}
+\end{equation}
+We use the convention that the Hermitian pairing is antilinear in the first entry.
+In a local frame \(\widehat e_R=\pi_D^*e_R\), write
+\begin{equation}
+\widehat u_N=U_N\widehat e_R,
+\qquad
+\mathcal J_{\rm vis}=J_{\rm vis}\widehat e_R,
+\qquad
+\widehat h_R(\widehat e_R,\widehat e_R)=H_R.
+\label{eq:local_visibility_frame}
+\end{equation}
+Then
+\begin{equation}
+\left\langle
+\widehat u_N,
+\mathcal J_{\rm vis}
+\right\rangle_{\widehat h_R}
+=
+H_R\,\overline{U_N}\,J_{\rm vis}.
+\label{eq:local_visibility_pairing}
+\end{equation}
+The earlier scalar-looking formula is only this local trivialized representative:
 \begin{equation}
 \begin{aligned}
 y_N^{\rm eff}(D,\varepsilon)
@@ -1047,16 +1103,17 @@ y_0
 \int_0^\infty \rho\,\dd\rho
 \int_{-\infty}^{\infty}\dd z_{\rm ax}
 \int_0^{2\pi}\dd\varphi\,
-\overline{\widehat u_N(\rho,z_{\rm ax},\varphi;D,\varepsilon)}
+\overline{U_N(\rho,z_{\rm ax},\varphi;D,\varepsilon)}
 \\
 &\times
 f_L(\rho,z_{\rm ax})
 f_R(\rho,z_{\rm ax})
 W_{\rm frame}(\rho,z_{\rm ax},\varphi;D,\varepsilon).
 \end{aligned}
-\label{eq:y_eff}
+\label{eq:y_eff_local}
 \end{equation}
-When the visible kernel has already been reduced to an \(m=0\) axial channel, Eq.~\eqref{eq:y_eff} reduces to the earlier \(2\pi\rho\,\dd\rho\,\dd z_{\rm ax}\) form with the angular integral included in \(W_{\rm frame}\).
+Here \(W_{\rm frame}\) is not an additional invariant object; it denotes the local representative of the bundle frame, Hermitian metric \(H_R\), visible source \(J_{\rm vis}\), angular-channel projection, Jacobian convention, and any remaining complex-conjugation convention.
+When the visible kernel has already been reduced to an \(m=0\) axial channel, Eq.~\eqref{eq:y_eff_local} reduces to the earlier \(2\pi\rho\,\dd\rho\,\dd z_{\rm ax}\) form with the angular integral included in \(W_{\rm frame}\).
 The normalized visible weight is
 \begin{equation}
 \boxed{
