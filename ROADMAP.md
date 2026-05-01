@@ -440,6 +440,25 @@ Acceptance criteria:
 - The text states that `c_D` is generally nonlinear, while `Ctilde_D` is linear
   under the stated Hermitian-pairing convention.
 
+### R16. Interface Data Declaration
+
+Priority: medium.
+Status: completed.
+Resolution: Core Structure now separates the Spin^c generation-theorem data
+`D_gen=(C,R,L_R,scrD_R)` from the formation/visibility interface data
+`D_int(D)=(pi_D,j_D,w_D,J_vis)`.  Section IX refers back to this interface-data
+declaration and states explicitly that changing these data changes the
+effective rates/overlaps, not the index-theoretic result `N_gen=3`.
+
+Acceptance criteria:
+
+- The paper explicitly lists the data required for the Spin^c multiplicity
+  theorem.
+- The paper separately lists the data required for scalarization and
+  visibility.
+- The text states that the interface data are not inputs to the generation
+  count.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
@@ -457,3 +476,5 @@ Acceptance criteria:
   condition has been stated.
 - Do not call a normalization-dependent profile map linear; keep the raw
   scalarization operator separate from the normalized profile.
+- Do not treat `(pi_D,j_D,w_D,J_vis)` as assumptions needed for the Spin^c
+  index count; they belong to the effective formation/visibility layer.

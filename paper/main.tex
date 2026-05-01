@@ -100,6 +100,28 @@ The construction has three logically distinct layers:
 \item the \emph{internal fermion layer}, where the Spin\(^c\) Dolbeault--Dirac operator on the projection surface supplies the chiral zero-mode multiplicity;
 \item the \emph{formation and visibility layer}, where the two-center conformal geometry supplies scalar spectral data for effective rates and visible-sector overlaps.
 \end{enumerate}
+The data needed for the Spin\(^c\) generation-multiplicity theorem are only
+\begin{equation}
+\boxed{
+\mathfrak D_{\rm gen}
+=
+(C,R,L_R,\scrD_R).
+}
+\label{eq:generation_theorem_data}
+\end{equation}
+They fix \(\Ker\scrD_R^+\), hence the number of protected chiral generations.
+The effective formation/visibility layer uses additional interface data
+\begin{equation}
+\boxed{
+\mathfrak D_{\rm int}(D)
+=
+\left(
+\pi_D,\mathfrak j_D,w_D,\mathcal J_{\rm vis}
+\right).
+}
+\label{eq:interface_data}
+\end{equation}
+These interface data assign scalar profiles, rates, and visible overlaps to the protected modes; they are not inputs to the index-theoretic statement \(N_{\rm gen}=3\).
 The core Hilbert-space statement is
 \begin{equation}
 \boxed{
@@ -849,6 +871,7 @@ It does not determine the number of chiral SM generations; that number is fixed 
 
 The structures in this section are an effective formation/visibility model built on the Spin\(^c\) generation theorem.
 They use scalar spectral data and two-center collective coordinates to parametrize rates and overlaps; they do not supply an independent proof of the number of chiral SM generations.
+The interface data used below are precisely \(\mathfrak D_{\rm int}(D)\) from Eq.~\eqref{eq:interface_data}; changing them changes the effective formation/visibility model, not the Spin\(^c\) multiplicity result.
 
 For the protected chiral sector, let \(\Pi_N=|u_N\rangle\langle u_N|\) be the projector onto the Toeplitz eigenmode \(u_N\).
 The chiral degeneracy is
