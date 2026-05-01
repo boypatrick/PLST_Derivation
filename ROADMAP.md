@@ -278,6 +278,12 @@ G_SM = (SU(3) x SU(2) x U(1)) / Z_6.
 ### R10. Notation Hygiene
 
 Priority: low.
+Status: completed.
+Resolution: the paper now has a notation-conventions subsection.  `D` is
+reserved for two-center separation, Dirac-type operators use `mathscr D`,
+`P_R`, `P_N^cc`, `Pi_N`, and `P_N(t;D,eta)` are explicitly separated, and the
+protected degeneracy is written as `g_N^{chiral}` in the zero-mode and
+probability formulas.
 
 - Keep `D` for center separation and `mathscr D_R` for Dirac operators.
 - Keep `P_R` for Bergman projection, `P_N^cc` for collective-coordinate
