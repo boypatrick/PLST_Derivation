@@ -405,6 +405,22 @@ Acceptance criteria:
 - The probability law states how to replace `Gamma_N` by `Gamma_N^soft` when
   hard locking fails.
 
+### R14. Abstract and Notation Consistency
+
+Priority: high.
+Status: completed.
+Resolution: The abstract now uses scalar spectral labels `psi_n, omega_n`
+instead of an unqualified `psi_N, omega_N`, defines `Gamma_N^eff` in the
+probability law, and states that hard-locking is required before introducing
+`psi_N^lock`, `omega_N`, and `Gamma_N`; otherwise `Gamma_N^eff=Gamma_N^soft`.
+
+Acceptance criteria:
+
+- The abstract does not use `psi_N` for an unlocked scalar eigenmode.
+- The abstract probability law uses `Gamma_N^eff`.
+- The hard/soft distinction is stated before the abstract interprets the
+  formation/visibility weights.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
@@ -417,3 +433,5 @@ Acceptance criteria:
 - Do not silently identify the Spin^c generation basis `u_N` with the scalar
   spatial eigenmodes `psi_n`; use the explicit scalarization weights
   `C_D, mu_{nN}` and introduce hard locking only under the gap condition.
+- Do not use `psi_N` or `omega_N` in the abstract before the hard-locking
+  condition has been stated.
