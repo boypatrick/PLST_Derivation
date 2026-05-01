@@ -868,7 +868,53 @@ g_{N\ge4}^{\rm chiral}=0.
 \label{eq:gN}
 \end{equation}
 
-For kinetics, the two centers define a collective-coordinate subspace
+\subsection{Generation-to-spatial mode assignment}
+\label{sec:mode_locking}
+
+The protected generation basis \(u_N\in H^0(C,L_R)\) and the scalar spatial eigenmodes \(\psi_n\) of Eq.~\eqref{eq:schrodinger} are not the same objects.
+The former are Spin\(^c\) zero modes on \(C\); the latter are eigenfunctions of a Schrödinger operator on the spatial two-center chart.
+To attach formation data to the protected generations, the effective PSLT layer model includes a mode-locking prescription
+\begin{equation}
+\boxed{
+\mathcal I_D:
+\cH_{\rm gen}
+=
+H^0(C,L_R)
+\longrightarrow
+\cH_{\Omega}^{\rm scalar}(D),
+\qquad
+\mathcal I_D(u_N)
+=
+\psi_{n(N;D)}(\cdot;D).
+}
+\label{eq:mode_locking_map}
+\end{equation}
+Equivalently,
+\begin{equation}
+\psi_N^{\Omega}(\cdot;D)
+:=
+\psi_{n(N;D)}(\cdot;D),
+\qquad
+\omega_N(D)
+:=
+\omega_{n(N;D)}(D).
+\label{eq:locked_scalar_mode}
+\end{equation}
+The map \(\mathcal I_D\) is not part of the Spin\(^c\) index theorem.
+It is an effective interface datum that assigns scalar barrier and overlap data to the three protected generation modes after the generation count has already been fixed.
+Thus
+\begin{equation}
+u_N
+\in H^0(C,L_R)
+\quad\text{fixes the chiral generation label,}
+\qquad
+\psi_N^\Omega
+\quad\text{supplies scalar formation data.}
+\label{eq:uN_psiN_distinction}
+\end{equation}
+All quantities \(\omega_N\), \(\Gamma_N\), and \(|N,\pm\rangle\) below are understood after this mode-locking prescription.
+
+For kinetics, the locked scalar mode \(\psi_N^\Omega\) and the two centers define a collective-coordinate subspace
 \begin{equation}
 \cC_N=\Span\{|N,+\rangle,\ |N,-\rangle\}.
 \end{equation}
@@ -1065,7 +1111,7 @@ The bundle \(L_R\) is the auxiliary Dolbeault twist, and the positive and negati
 Riemann--Roch gives index three, and Serre duality gives \(H^1(C,L_R)=0\).
 With all additional SM-charged sectors either absent from the kernel or fully paired by a gauge-invariant mass map, the theory therefore has exactly three low-energy chiral SM generations and no unpaired light SM-charged exotics.
 
-The scalar two-center spectral operator and the quantities \((g_N^{\rm chiral},\Gamma_N,B_N,P_N)\) then define an effective model for how these three protected modes form and couple to the visible sector.
+After the explicit mode-locking map \(\mathcal I_D:u_N\mapsto\psi_N^\Omega\), the scalar two-center spectral operator and the quantities \((g_N^{\rm chiral},\Gamma_N,B_N,P_N)\) define an effective model for how these three protected modes form and couple to the visible sector.
 They are coarse-grained phenomenological structures on top of the Spin\(^c\) generation theorem, not substitutes for it.
 
 \begin{acknowledgments}

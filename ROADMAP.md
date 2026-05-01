@@ -301,7 +301,12 @@ a new, concrete mathematical error is found.
 ### R11. Define the Generation-to-Spatial Mode Assignment
 
 Priority: high.
-Status: pending.
+Status: completed.
+Resolution: Section IX now defines a mode-locking map
+`I_D: H^0(C,L_R) -> H_Omega^scalar(D)` with
+`I_D(u_N)=psi_{n(N;D)}(.;D)`, introduces
+`psi_N^Omega` and `omega_N := omega_{n(N;D)}`, and states explicitly that this
+is an effective interface datum rather than part of the Spin^c index theorem.
 
 The remaining real interface gap is the relation between:
 
