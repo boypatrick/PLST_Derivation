@@ -497,6 +497,26 @@ Acceptance criteria:
 - The soft-assignment rate is incorporated through the single definition of
   `Gamma_N^eff`, not by a trailing replacement sentence.
 
+### R19. Visibility Pairing Linearity Convention
+
+Priority: low-medium.
+Status: completed.
+Resolution: The visibility section now states that, under the chosen
+mathematical convention where the Hermitian pairing is antilinear in the first
+entry, `y_N^eff` is an antilinear amplitude in the generation vector `u_N`.
+Since `B_N` uses only `|y_N^eff|^2`, the normalized visibility is unchanged.
+The text also notes that phase-sensitive Yukawa or Wilson-coefficient uses may
+instead adopt the opposite pairing order `<J_vis,u_hat_N>` to obtain a
+linear-in-`u_N` convention.
+
+Acceptance criteria:
+
+- The convention note appears immediately after the `y_N^eff` formula.
+- The text states that `y_N^eff` is antilinear in `u_N` under the current
+  Hermitian-pairing convention.
+- The text states that using `<J_vis,u_hat_N>` gives a linear-in-`u_N`
+  convention and leaves `B_N` unchanged.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
@@ -520,3 +540,6 @@ Acceptance criteria:
   self-adjoint realization of `L_Omega(D)`.
 - Do not write the final body probability law with the hard-locking-only
   `Gamma_N`; use `Gamma_N^eff` and define its hard/soft cases.
+- Do not treat the antilinearity of `y_N^eff` under the chosen Hermitian
+  convention as a physical ambiguity in `B_N`; the normalized visibility uses
+  `|y_N^eff|^2`.
