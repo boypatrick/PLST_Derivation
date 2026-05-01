@@ -668,7 +668,17 @@ The physical affine coordinate is
 }
 \label{eq:zeta_projection}
 \end{equation}
-The projection map is
+Strictly, Eq.~\eqref{eq:zeta_projection} is a cylindrical-coordinate representative on
+\(\mathbb R^3\setminus A_{\rm ax}\), where
+\begin{equation}
+A_{\rm ax}:=\{\rho=0\},
+\end{equation}
+because the angular coordinate \(\varphi\) is undefined on the axis.
+The axial set has zero measure with respect to
+\(\dd\mu_{\rm cyl}=\rho\,\dd\rho\,\dd z_{\rm ax}\,\dd\varphi\), so the pullback
+construction used in the visibility integrals may be read in an \(L^2\)-almost-everywhere sense.
+Equivalently, one may smooth the axial phase and take the regularized limit.
+With this convention, we write the projection map as a map from the spatial chart:
 \begin{equation}
 \boxed{
 \pi_D:\mathbb R^3\longrightarrow C\simeq\CP^1,

@@ -520,7 +520,13 @@ Acceptance criteria:
 ### R20. Axis-Domain Caveat for `pi_D`
 
 Priority: low-medium.
-Status: pending.
+Status: completed.
+Resolution: The projection-map subsection now states that the displayed
+cylindrical representative for `zeta_R` is defined on
+`R^3 \ A_ax`, where `A_ax={rho=0}` is the axial coordinate singularity.  The
+text explains that `A_ax` has zero `dmu_cyl` measure for the visibility
+integrals, so the pullback may be read in an `L^2` almost-everywhere sense, or
+as the limit of a smooth axial phase regularization.
 
 Add a short caveat near the explicit projection map
 
