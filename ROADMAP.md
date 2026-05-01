@@ -459,6 +459,25 @@ Acceptance criteria:
 - The text states that the interface data are not inputs to the generation
   count.
 
+### R17. Self-Adjoint Scalar Realization
+
+Priority: medium.
+Status: completed.
+Resolution: Section IX now states that `L_Omega(D)` is the Friedrichs
+self-adjoint realization on `H_Omega(D)` for the regulated two-center
+potential, or the corresponding finite-volume self-adjoint realization with
+the stated boundary conditions. The projection-valued spectral measure
+`dE_lambda(D)` used in the soft assignment is explicitly tied to this
+self-adjoint operator.
+
+Acceptance criteria:
+
+- The paper specifies the self-adjoint realization of `L_Omega(D)`.
+- The finite-volume convention is separated from the infinite-volume/Friedrichs
+  convention.
+- The projection-valued measure `dE_lambda(D)` is identified as the spectral
+  measure of that operator.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
@@ -478,3 +497,5 @@ Acceptance criteria:
   scalarization operator separate from the normalized profile.
 - Do not treat `(pi_D,j_D,w_D,J_vis)` as assumptions needed for the Spin^c
   index count; they belong to the effective formation/visibility layer.
+- Do not use the scalar spectral measure `dE_lambda(D)` without specifying the
+  self-adjoint realization of `L_Omega(D)`.
