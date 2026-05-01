@@ -6,6 +6,7 @@ This repository contains the clean first-principles three-generation derivation 
 
 - `paper/main.tex` - LaTeX source for the derivation.
 - `paper/main.pdf` - compiled PDF.
+- `ROADMAP.md` - accepted review items and next revision tasks.
 
 The core claim is that the three Standard Model generations arise from the Spin^c
 Dolbeault-Dirac operator on the two-center projection bundle.  The divisor
