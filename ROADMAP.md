@@ -302,11 +302,11 @@ a new, concrete mathematical error is found.
 
 Priority: high.
 Status: completed.
-Resolution: Section IX now defines a mode-locking map
-`I_D: H^0(C,L_R) -> H_Omega^scalar(D)` with
-`I_D(u_N)=psi_{n(N;D)}(.;D)`, introduces
-`psi_N^Omega` and `omega_N := omega_{n(N;D)}`, and states explicitly that this
-is an effective interface datum rather than part of the Spin^c index theorem.
+Resolution: Section IX now separates the generation Hilbert space
+`H_gen=H^0(C,L_R)` from the scalar spatial Hilbert space `H_Omega(D)`,
+defines the scalarization operator `C_D:H_gen -> H_Omega(D)`, introduces
+spectral weights `mu_{nN}=|<psi_n,C_D u_N>|^2`, and treats the hard map
+`I_D(u_N)=psi_{n(N;D)}` only as the isolated-maximum/gap limit.
 
 The remaining real interface gap is the relation between:
 
@@ -357,7 +357,8 @@ Resolution: Section IX now treats `u_hat_N` as a pullback section
 metric `h_hat_R`, and writes `y_N^eff` as the invariant pairing
 `int <u_hat_N,J_vis>_{h_hat_R} dmu_cyl`.  The older
 `overline{u_hat_N} f_L f_R W_frame` expression is retained only as a local
-trivialized representative.
+trivialized representative.  A frame-change check now shows explicitly that
+`H_R overline{U_N} J_vis` is invariant under `e_hat_R -> g e_hat_R`.
 
 The current visibility integral is acceptable in a local trivialization, but it
 should be made geometrically invariant.  Since `u_N` is a section of `L_R`, its
@@ -384,6 +385,26 @@ is a trivialized representative where `W_frame` contains the bundle frame,
 Hermitian metric, Jacobian, angular-channel projection, and any remaining
 complex conjugation convention.
 
+### R13. Refine Hard Locking into Spectral Scalarization and Soft Assignment
+
+Priority: high.
+Status: completed.
+Resolution: The hard locking map is now derived only after defining `C_D`,
+the scalar spectral weights `mu_{nN}`, and the gap condition
+`mu_{n(N),N} - sup_{m != n(N)} mu_{mN} >= Delta_lock`.  If the gap condition
+fails, the paper uses a soft assignment
+`Gamma_N^soft=sum_n mu_{nN} Gamma_n`, or the corresponding spectral-measure
+integral for continuous spectrum.
+
+Acceptance criteria:
+
+- `u_N`, `u_hat_N`, and `psi_n` live in explicitly distinct spaces.
+- The interface from generation zero modes to scalar profiles is `C_D`, not a
+  silent identification of bases.
+- `I_D` and `psi_N^lock` appear only after an isolated maximum/gap condition.
+- The probability law states how to replace `Gamma_N` by `Gamma_N^soft` when
+  hard locking fails.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
@@ -394,4 +415,5 @@ complex conjugation convention.
 - Do not let the scalar spectral operator replace the Spin^c fermion zero-mode
   theorem for the generation count.
 - Do not silently identify the Spin^c generation basis `u_N` with the scalar
-  spatial eigenmodes `psi_n`; use the explicit R11 mode-locking map.
+  spatial eigenmodes `psi_n`; use the explicit scalarization weights
+  `C_D, mu_{nN}` and introduce hard locking only under the gap condition.
