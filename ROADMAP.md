@@ -33,14 +33,16 @@ h^0(CP^1,O(2)) = 3,
 h^1(CP^1,O(2)) = 0.
 ```
 
-Therefore, if no other SM-charged nonzero-index sector is present,
-`N_gen = 3`.
+Therefore, if all other SM-charged sectors are absent from the kernel or fully
+paired and gapped, `N_gen = 3` and there are no unpaired light SM-charged
+exotics.
 
 ## Revision Tasks
 
 ### R1. Add Product Dirac Action and 4D Weyl Reduction
 
 Priority: highest.
+Status: completed.
 
 Add the explicit product-space fermion action after the parent action:
 
@@ -77,6 +79,7 @@ internal Spin^c zero mode -> massless 4D Weyl fermion -> SM chiral generation.
 ### R2. Strengthen the Exclusivity Condition
 
 Priority: highest.
+Status: completed.
 
 Replace or supplement `ind D_vec = 0`.  Index zero excludes extra net chirality,
 but does not exclude massless vectorlike SM-charged exotics.
@@ -108,6 +111,7 @@ Separate the two claims:
 ### R3. Clarify Spin^c Determinant-Line Conventions
 
 Priority: high.
+Status: completed.
 
 Add a sentence in the Spin^c section:
 
@@ -258,4 +262,3 @@ Priority: low.
 - Do not use `ind D_vec = 0` alone as a no-light-exotics condition.
 - Do not let the scalar spectral operator replace the Spin^c fermion zero-mode
   theorem for the generation count.
-
