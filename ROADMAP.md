@@ -202,6 +202,10 @@ K_N(D,eta), A_{N,pm}(D,eta), and chi_N(D,eta).
 ### R7. Treat S_Omega as a Static Functional
 
 Priority: medium.
+Status: completed.
+Resolution: the parent action now uses `S_Omega^cov`, while the displayed
+three-dimensional two-center variational object is renamed `E_Omega` and
+explicitly described as the static-sector reduction.
 
 The current `S_Omega` is a three-dimensional static variational functional, not
 a four-dimensional Lorentz-covariant action.  Either:
@@ -213,6 +217,12 @@ a four-dimensional Lorentz-covariant action.  Either:
 ### R8. Mark Formation Law as Effective Kinetics
 
 Priority: medium.
+Status: completed.
+Resolution: the probability module is now explicitly framed as a
+coarse-grained effective formation/visibility model.  The Schur complement has
+the gap assumption `0 notin Spec(Q_N^cc K_N Q_N^cc)`, with reduced
+resolvent/pseudoinverse noted as the fallback.  The WKB barrier region
+`B_{N,pm}` and positive-part integrand are defined.
 
 In the abstract and body, prefer:
 
@@ -239,6 +249,11 @@ S_WKB = int ds sqrt((V_eff - omega_N^2)_+).
 ### R9. Add Standard One-Family Checks
 
 Priority: medium.
+Status: completed.
+Resolution: the paper now states the global group
+`G_SM = (SU(3) x SU(2) x U(1))/Z_6`, clarifies that local anomaly equations fix
+hypercharge only up to normalization, and adds both the `SU(3)^3` and Witten
+`SU(2)` anomaly checks.
 
 Add:
 

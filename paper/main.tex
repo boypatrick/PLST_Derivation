@@ -96,7 +96,7 @@ The construction has three logically distinct layers:
 \begin{enumerate}
 \item the \emph{SM charge layer}, where one minimal Standard Model family is fixed by gauge invariance, Yukawa invariance, and anomaly cancellation;
 \item the \emph{internal fermion layer}, where the Spin\(^c\) Dolbeault--Dirac operator on the projection surface supplies the chiral zero-mode multiplicity;
-\item the \emph{formation and visibility layer}, where the two-center conformal geometry determines spectral rates and visible-sector overlaps.
+\item the \emph{formation and visibility layer}, where the two-center conformal geometry supplies scalar spectral data for effective rates and visible-sector overlaps.
 \end{enumerate}
 The core Hilbert-space statement is
 \begin{equation}
@@ -158,7 +158,7 @@ S_{\rm grav}
 +S_{\rm gauge}
 +S_{\rm Higgs}
 +S_{\rm fermion}
-+S_\Omega
++S_\Omega^{\rm cov}
 +S_{\rm proj}
 +S_{\rm vis}.
 \label{eq:parent_action}
@@ -324,10 +324,15 @@ Without it, an additional SM-charged internal bundle with nonzero index could pr
 \section{One Standard Model Family}
 \label{sec:one_family}
 
-The visible gauge group is
+The local anomaly equations use the Standard Model Lie algebra.
+When a global group and charge lattice are needed, we take
 \begin{equation}
-G_{\rm SM}=SU(3)_c\times SU(2)_L\times U(1)_Y.
+G_{\rm SM}
+=
+\frac{SU(3)_c\times SU(2)_L\times U(1)_Y}{\mathbb Z_6}.
+\label{eq:gsm_global}
 \end{equation}
+This global choice fixes the conventional hypercharge unit used below; without it, the local equations determine hypercharge only up to an overall \(U(1)_Y\) normalization.
 For one left-handed Weyl family, take
 \begin{equation}
 Q:(3,2)_{Y_Q},\quad
@@ -362,6 +367,17 @@ The \(SU(3)^2U(1)\) anomaly gives
 2Y_Q+Y_u+Y_d=0,
 \end{equation}
 which is automatic after Eq.~\eqref{eq:yukawa_hypercharge_constraints}.
+The pure color anomaly also cancels:
+\begin{equation}
+\mathcal A_{SU(3)^3}
+=
+2A(3)+A(\bar3)+A(\bar3)
+=
+2A(3)-A(3)-A(3)
+=0,
+\label{eq:su3_cubic_anomaly}
+\end{equation}
+where the factor of two comes from the two \(SU(2)_L\) components of \(Q\), and \(A(\bar3)=-A(3)\).
 The \(SU(2)^2U(1)\) anomaly gives
 \begin{equation}
 3Y_Q+Y_L=0,
@@ -395,6 +411,17 @@ The \(U(1)^3\) anomaly cancels:
 6q^3+3(-4q)^3+3(2q)^3+2(-3q)^3+(6q)^3
 =0.
 \end{equation}
+There is no Witten global \(SU(2)\) anomaly.
+One family contains
+\begin{equation}
+3\text{ color copies of }Q
++
+1\text{ lepton doublet}
+=4
+\label{eq:witten_su2_count}
+\end{equation}
+left-handed \(SU(2)_L\) Weyl doublets, which is even.
+For three families the number is \(12\), still even.
 With \(q=1/6\),
 \begin{equation}
 \boxed{
@@ -414,7 +441,8 @@ With \(q=1/6\),
 A sterile \(\nu^c:(1,1)_0\) may be added without changing these anomaly equations.
 
 \begin{proposition}
-Within the minimal one-family chiral field content above, and assuming the Yukawa couplings \(QHu^c\), \(QH^\dagger d^c\), and \(LH^\dagger e^c\), the hypercharge pattern is fixed up to the overall normalization of \(U(1)_Y\).
+Within the minimal one-family chiral field content above, and assuming the Yukawa couplings \(QHu^c\), \(QH^\dagger d^c\), and \(LH^\dagger e^c\), the local anomaly equations fix the hypercharge pattern up to the overall normalization of \(U(1)_Y\).
+The choice in Eq.~\eqref{eq:gsm_global} fixes the conventional unit \(q=1/6\).
 \end{proposition}
 
 % ============================================================
@@ -675,15 +703,16 @@ The Toeplitz definition is the physical statement; the monomial basis is only a 
 \section{Two-Center Conformal Geometry}
 \label{sec:two_center_geometry}
 
-The two-center conformal factor is obtained from
+The two-center conformal factor is obtained in the static sector.
+The covariant parent term \(S_\Omega^{\rm cov}\) in Eq.~\eqref{eq:parent_action} is not specified by the spatial expression below; rather, under the static two-center ansatz it reduces to the three-dimensional variational energy functional
 \begin{equation}
-S_\Omega
+E_\Omega
 =
 \frac{\kappa}{2}
 \int_{\mathbb R^3}\dd^3x\,|\nabla\Omega|^2
 -4\pi\kappa
 \int_{\mathbb R^3}\dd^3x\,\sigma(x)(\Omega-1),
-\label{eq:S_Omega}
+\label{eq:E_Omega}
 \end{equation}
 with
 \begin{equation}
@@ -694,7 +723,7 @@ a\left[\rho_\varepsilon(x-x_+)+\rho_\varepsilon(x-x_-)\right].
 \end{equation}
 Variation gives
 \begin{equation}
-\delta S_\Omega
+\delta E_\Omega
 =
 -\kappa
 \int_{\mathbb R^3}\dd^3x\,
@@ -808,6 +837,9 @@ It does not determine the number of chiral SM generations; that number is fixed 
 \section{Degeneracy, Kinetics, Visibility, and Formation}
 \label{sec:probability_modules}
 
+The structures in this section are an effective formation/visibility model built on the Spin\(^c\) generation theorem.
+They use scalar spectral data and two-center collective coordinates to parametrize rates and overlaps; they do not supply an independent proof of the number of chiral SM generations.
+
 For the protected chiral sector, let \(\Pi_N=|u_N\rangle\langle u_N|\) be the projector onto the Toeplitz eigenmode \(u_N\).
 The chiral degeneracy is
 \begin{equation}
@@ -856,7 +888,17 @@ A_{N,\pm}=A_{N,\pm}(D,\eta),
 \chi_N=\chi_N(D,\eta).
 \label{eq:eta_dependencies}
 \end{equation}
-The Feshbach--Schur effective matrix is
+The Feshbach--Schur step assumes a gap on the eliminated complement:
+\begin{equation}
+0\notin
+\operatorname{Spec}
+\left(
+Q_N^{\rm cc}\cK_N(D,\eta)Q_N^{\rm cc}
+\right).
+\label{eq:schur_gap_assumption}
+\end{equation}
+If this gap closes, the inverse below must be replaced by the corresponding reduced resolvent or pseudoinverse.
+Under Eq.~\eqref{eq:schur_gap_assumption}, the Feshbach--Schur effective matrix is
 \begin{equation}
 \cM_N
 =
@@ -885,9 +927,18 @@ A_{N,\pm}\exp[-2S_{N,\pm}^{\rm WKB}],
 \qquad
 S_{N,\pm}^{\rm WKB}
 =
-\int_{\cB_\pm}\dd s\,\sqrt{V_{\rm eff}(s)-\omega_N^2}.
+\int_{\cB_{N,\pm}}\dd s\,
+\sqrt{\left(V_{\rm eff}(s)-\omega_N^2\right)_+}.
 \label{eq:WKB}
 \end{equation}
+Here
+\begin{equation}
+\cB_{N,\pm}
+=
+\{s\text{ on the } \pm\text{ channel}:\ V_{\rm eff}(s)>\omega_N^2\},
+\label{eq:wkb_barrier_region}
+\end{equation}
+and \((x)_+=\max\{x,0\}\).
 The formation rate is
 \begin{equation}
 \boxed{
@@ -970,7 +1021,7 @@ B_N
 \langle u_I|\mathcal O_{\rm vis}^\dagger\mathcal O_{\rm vis}|u_I\rangle}.
 \end{equation}
 
-Finally, the formation law
+Finally, at the coarse-grained effective level, assume a single-rate Markovian formation law
 \begin{equation}
 \frac{\dd p_N}{\dd t}=\Gamma_N(1-p_N),
 \qquad
@@ -1005,8 +1056,8 @@ The bundle \(L_R\) is the auxiliary Dolbeault twist, and the positive and negati
 Riemann--Roch gives index three, and Serre duality gives \(H^1(C,L_R)=0\).
 With all additional SM-charged sectors either absent from the kernel or fully paired by a gauge-invariant mass map, the theory therefore has exactly three low-energy chiral SM generations and no unpaired light SM-charged exotics.
 
-The scalar two-center spectral operator and the quantities \((g_N,\Gamma_N,B_N,P_N)\) then describe how these three protected modes form and couple to the visible sector.
-They are phenomenological structures on top of the Spin\(^c\) generation theorem, not substitutes for it.
+The scalar two-center spectral operator and the quantities \((g_N,\Gamma_N,B_N,P_N)\) then define an effective model for how these three protected modes form and couple to the visible sector.
+They are coarse-grained phenomenological structures on top of the Spin\(^c\) generation theorem, not substitutes for it.
 
 \begin{acknowledgments}
 The author acknowledges the mathematical foundations of Riemann surface theory, Spin\(^c\) Dirac operators, index theory, and Standard Model anomaly cancellation used in this work.
