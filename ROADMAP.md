@@ -888,10 +888,10 @@ This is a final layout-only correction for the two-center projection figure.
 
 Verification:
 
-- Moved the \(p_-\) label on the \(\mathbb{CP}^1\) sphere to the right of the
-  lower branch point instead of directly below it.
-- Lowered the divisor/output box under the sphere so the branch-point label and
-  the object box no longer visually overlap.
+- Moved the \(p_-\) label on the \(\mathbb{CP}^1\) sphere to an external
+  lower-left callout with a white background and a short leader line.
+- Lowered the divisor/output box under the sphere so the branch-point callout
+  and the object box no longer visually overlap.
 - No theorem text, assumptions, or physics content changed.
 
 ## Do Not Reopen
