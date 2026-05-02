@@ -48,7 +48,7 @@
 
 \begin{document}
 
-\title{\Large \bf \texorpdfstring{A Spin\(^c\) Projection-Dolbeault Derivation of Three Standard Model Generations in PSLT}{A Spinc Projection-Dolbeault Derivation of Three Standard Model Generations in PSLT}}
+\title{\Large \bf \texorpdfstring{A Conditional Spin\(^c\) Dolbeault Derivation of Three Standard Model Family Copies in PSLT}{A Conditional Spinc Dolbeault Derivation of Three Standard Model Family Copies in PSLT}}
 
 \author{Bo-Yu Chen}
 \affiliation{Independent Researcher}
@@ -56,14 +56,13 @@
 \date{May 1, 2026}
 
 \begin{abstract}
-We formulate the Projection Spectral Layer Theory (PSLT) as a first-principles projection-spectral derivation of the three-generation multiplicity of the Standard Model chiral family representation, conditional on the PSLT two-center projection data.
-The compact projection surface is \(C=\CP^1\), the two projection branch points define the divisor \(R=p_+ + p_-\), and the generation line bundle is \(L_R=\cO(R)\simeq\cO(2)\).
-The internal fermion operator is specified to be the Spin\(^c\) Dolbeault--Dirac operator
+We formulate a conditional Spin\(^c\) index-theoretic derivation of the three-family multiplicity of the Standard Model chiral representation in Projection Spectral Layer Theory (PSLT).
+The input is the PSLT two-center projection datum: the compact projection surface \(C=\CP^1\), the branch divisor \(R=p_+ + p_-\), the generation line bundle \(L_R=\cO(R)\simeq\cO(2)\), and the protected SM-charged carrier \(\cR_{\rm SM}\otimes(\Lambda^{0,*}T^*C\otimes L_R)\).
+On this carrier the internal fermion operator is the Spin\(^c\) Dolbeault--Dirac operator
 \[
 \scrD_R=\sqrt2\left(\bar\partial_{L_R}+\bar\partial_{L_R}^\dagger\right)
 \]
-acting on \(\Lambda^{0,*}T^*C\otimes L_R\).
-Hodge theory gives
+and Hodge theory gives
 \[
 \Ker \scrD_R^+\cong H^0(C,L_R),
 \qquad
@@ -75,15 +74,9 @@ h^0(\CP^1,\cO(2))=3,
 \qquad
 h^1(\CP^1,\cO(2))=0.
 \]
-Provided the SM-charged chiral carrier is exactly this Spin\(^c\) generation sector and all other SM-charged internal sectors are absent from the kernel or fully paired and gapped, the low-energy four-dimensional chiral spectrum contains exactly three Standard Model families and no unpaired light SM-charged exotics.
-The same two-center geometry supplies the conformal factor \(\Omega\) from a variational Poisson constraint, the scalar spectral operator \([-\nabla^2+V_{\rm eff}]\psi_n=\omega_n^2\psi_n\), and the scalar spectral data used in an effective formation/visibility probability law
-\[
-P_N(t)=
-\frac{B_Ng_N^{\rm chiral}(1-\ee^{-\Gamma_N^{\rm eff}t})}
-{\sum_{K=1}^{3}B_Kg_K^{\rm chiral}(1-\ee^{-\Gamma_K^{\rm eff}t})}.
-\]
-The scalarization weights \(\mu_{nN}\) select a hard-locked mode only when the locking gap exists, in which case \(\psi_N^{\rm lock}:=\psi_{n(N;D)}\), \(\omega_N:=\omega_{n(N;D)}\), and \(\Gamma_N^{\rm eff}=\Gamma_N\); otherwise \(\Gamma_N^{\rm eff}=\Gamma_N^{\rm soft}\).
-Thus the generation count is a Spin\(^c\) index-theoretic consequence of the two-center projection divisor, while \((g_N^{\rm chiral},\Gamma_N^{\rm eff},B_N)\) describe degeneracy, kinetics, and visible-sector overlap of the three protected modes.
+Provided all other SM-charged internal sectors are absent from the kernel or fully paired and gapped, the four-dimensional low-energy chiral spectrum contains exactly three unpaired SM family copies.
+The novelty is not the Riemann--Roch computation itself, but the identification of the two-center projection divisor as the generation line bundle for the protected SM-charged Spin\(^c\) sector.
+Scalar spectral data and the quantities \((g_N^{\rm chiral},\Gamma_N^{\rm eff},B_N)\) are kept as a post-index formation/visibility interface: they assign profiles, rates, and visible overlaps to the three protected modes, but they do not determine the family count.
 \end{abstract}
 
 \maketitle
@@ -91,8 +84,17 @@ Thus the generation count is a Spin\(^c\) index-theoretic consequence of the two
 \newpage
 
 % ============================================================
-\section{Core Structure}
+\section{Introduction and Core Structure}
 \label{sec:core_structure}
+
+The Standard Model contains three chiral copies of the same anomaly-free family representation.
+This paper addresses only the multiplicity problem inside a conditional PSLT projection model: given a two-center projection surface, a generation line bundle, and a protected Spin\(^c\) carrier for SM-charged fermions, it asks whether the number of protected chiral family copies is fixed.
+It does not derive the two-center projection data from a UV-complete quantum-gravity vacuum, and it does not attempt to explain Yukawa hierarchies, CKM or PMNS mixing, or the detailed mass spectrum.
+
+Index-theoretic generation counting is a standard tool in field theory and compactification problems \cite{AtiyahSinger1968,LawsonMichelsohn1989}.
+Related cohomological or topological mechanisms for chiral matter appear in heterotic, brane, and F-theory constructions \cite{Candelas1985,Witten1986,Blumenhagen2007,BeasleyHeckmanVafa2009}.
+The specific claim here is narrower: within the PSLT protected generation sector, the two-center branch divisor \(R=p_+ + p_-\) is identified with the generation line bundle \(L_R=\cO(R)\simeq\cO(2)\), so the SM family multiplicity is the Spin\(^c\) Dolbeault index of \((\CP^1,\cO(2))\).
+The novelty is therefore the physical identification of the PSLT two-center projection divisor as the generation line bundle, not the elementary Riemann--Roch calculation \(h^0(\CP^1,\cO(2))=3\) by itself.
 
 The construction has three logically distinct layers:
 \begin{enumerate}
@@ -229,7 +231,7 @@ S_{\rm proj}^{\rm top}
 \label{eq:Sproj}
 \end{equation}
 where \(J_R^{(\varepsilon)}\) is any smooth representative of \(\operatorname{PD}(R)\) that tends, as a current, to \(\delta_{p_+}^{(2)}+\delta_{p_-}^{(2)}\).
-The first-principles input is Eq.~\eqref{eq:Sproj_cohomology}; Eq.~\eqref{eq:Sproj} is only a regulated implementation of the same topological class.
+The topological input is Eq.~\eqref{eq:Sproj_cohomology}; Eq.~\eqref{eq:Sproj} is only a regulated implementation of the same cohomology class.
 
 \subsection{SM-charged fermion sector}
 \label{sec:sm_fermion_sector}
@@ -356,7 +358,7 @@ Without it, an additional SM-charged internal bundle with nonzero index could pr
 \section{One Standard Model Family}
 \label{sec:one_family}
 
-The local anomaly equations use the Standard Model Lie algebra.
+The local anomaly equations use the Standard Model Lie algebra, with standard anomaly conventions \cite{Bertlmann1996,Bilal2008}.
 When a global group and charge lattice are needed, we take
 \begin{equation}
 G_{\rm SM}
@@ -443,7 +445,7 @@ The \(U(1)^3\) anomaly cancels:
 6q^3+3(-4q)^3+3(2q)^3+2(-3q)^3+(6q)^3
 =0.
 \end{equation}
-There is no Witten global \(SU(2)\) anomaly.
+There is no Witten global \(SU(2)\) anomaly \cite{Witten1982SU2}.
 One family contains
 \begin{equation}
 3\text{ color copies of }Q
@@ -586,6 +588,12 @@ so that \(K_C^{1/2}\otimes E=L_R\).
 \section{Three-Generation Theorem}
 \label{sec:three_generation_theorem}
 
+\begin{remark}[Assumption boundary]
+The theorem below proves the multiplicity of unpaired SM-charged chiral zero modes inside the protected PSLT generation sector specified by \((C,R,L_R,\scrD_R)\).
+It does not derive the two-center projection data or the protected carrier from a UV-complete compactification.
+Those are model inputs; the statement proved here is the resulting Spin\(^c\) index theorem.
+\end{remark}
+
 \begin{theorem}[PSLT Spin\(^c\) three-generation theorem]
 \label{thm:three_gen}
 Let \(C=\CP^1\), \(R=p_+ + p_-\), and \(L_R=\cO(R)\simeq\cO(2)\).
@@ -608,7 +616,7 @@ Moreover, since \(\Ker\scrD_R^-=0\), the positive internal zero-mode space itsel
 \end{theorem}
 
 \begin{proof}
-Riemann--Roch for a line bundle \(L\) on a compact Riemann surface gives
+Riemann--Roch for a line bundle \(L\) on a compact Riemann surface gives \cite{Hartshorne1977,GriffithsHarris1978,Forster1981}
 \begin{equation}
 h^0(C,L)-h^1(C,L)=\deg L+1-g(C).
 \end{equation}
@@ -752,6 +760,7 @@ Define the finite-dimensional Toeplitz operator
 \label{eq:Toeplitz}
 \end{equation}
 on \(H^0(C,L_R)\), where \(M_{\mu_R}\) denotes multiplication by \(\mu_R\).
+This is a finite-dimensional Toeplitz quantization of the axial moment-map observable \cite{BordemannMeinrenkenSchlichenmaier1994}.
 The generation basis is defined by
 \begin{equation}
 \mathcal T_Ru_N=\tau_Nu_N,
@@ -835,7 +844,7 @@ r_\pm
 \section{Geometry-to-Spectrum Map}
 \label{sec:geometry_spectrum}
 
-We use the mostly-plus convention
+We use the mostly-plus convention \cite{Nakahara2003,BirrellDavies1982}
 \begin{equation}
 \eta_{\mu\nu}=\diag(-,+,+,+),
 \qquad
@@ -966,7 +975,7 @@ with the semibounded quadratic form of Eq.~\eqref{eq:LOmega_modes} on
 In finite-volume numerical applications, \(L_\Omega(D)\) denotes the
 corresponding self-adjoint realization with the stated boundary conditions.
 The notation \(\dd E_\lambda(D)\) below is the projection-valued spectral
-measure of this self-adjoint operator.
+measure of this self-adjoint operator \cite{ReedSimon4}.
 The projection map \(\pi_D\) pulls the generation bundle to the spatial chart:
 \begin{equation}
 \widehat L_R:=\pi_D^*L_R,
@@ -1110,7 +1119,7 @@ Q_N^{\rm cc}\cK_N(D,\eta)Q_N^{\rm cc}
 \label{eq:schur_gap_assumption}
 \end{equation}
 If this gap closes, the inverse below must be replaced by the corresponding reduced resolvent or pseudoinverse.
-Under Eq.~\eqref{eq:schur_gap_assumption}, the Feshbach--Schur effective matrix is
+Under Eq.~\eqref{eq:schur_gap_assumption}, the Feshbach--Schur effective matrix is \cite{Feshbach1958}
 \begin{equation}
 \cM_N
 =
@@ -1355,6 +1364,21 @@ B_Kg_K^{\rm chiral}\left(1-\ee^{-\Gamma_K^{\rm eff}(D,\eta)t}\right)
 \end{equation}
 
 % ============================================================
+\section{Limitations and Outlook}
+\label{sec:limitations_outlook}
+
+The result should be read as a conditional field-theoretic and index-theoretic model, not as a complete theory of flavor.
+Several inputs remain outside the theorem.
+First, the paper assumes the PSLT two-center projection data \((C,R)\) rather than deriving \(C=\CP^1\) and \(R=p_+ + p_-\) from a UV-complete quantum-gravity vacuum.
+Second, the protected SM-charged carrier \(\cR_{\rm SM}\otimes(\Lambda^{0,*}T^*C\otimes L_R)\) and the Spin\(^c\) Dolbeault representative are taken as the protected generation sector; the BPS remark provides a compatible motivation, not a universal vacuum-selection theorem.
+Third, the exact three-family conclusion requires the stated exclusivity and gap assumptions for all additional SM-charged internal sectors.
+Fourth, the theorem fixes the multiplicity of protected family copies but does not determine Yukawa hierarchies, CKM or PMNS mixing, neutrino masses, or the detailed spectrum of massive vectorlike states.
+
+The scalar two-center spectral operator and the effective quantities \((g_N^{\rm chiral},\Gamma_N^{\rm eff},B_N,P_N)\) should therefore be viewed as a post-index phenomenological interface.
+They can be used to assign formation rates and visible-sector overlaps to the three protected modes, but they are not inputs to the Spin\(^c\) proof of \(N_{\rm gen}=3\).
+Future work would need to derive the projection data and protected carrier from a more microscopic PSLT or compactification construction, and then connect the overlap functional to realistic flavor textures.
+
+% ============================================================
 \section{Conclusion}
 \label{sec:conclusion}
 
@@ -1372,6 +1396,11 @@ The author acknowledges the mathematical foundations of Riemann surface theory, 
 \end{acknowledgments}
 
 \begin{thebibliography}{99}
+
+\bibitem{AtiyahSinger1968}
+M.~F.~Atiyah and I.~M.~Singer,
+``The index of elliptic operators: I,''
+Annals Math. \textbf{87}, 484 (1968).
 
 \bibitem{Hartshorne1977}
 R.~Hartshorne,
@@ -1410,6 +1439,38 @@ Oxford University Press (1996).
 A.~Bilal,
 ``Lectures on Anomalies,''
 arXiv:0802.0634.
+
+\bibitem{Witten1982SU2}
+E.~Witten,
+``An \(SU(2)\) anomaly,''
+Phys. Lett. B \textbf{117}, 324 (1982).
+
+\bibitem{Candelas1985}
+P.~Candelas, G.~T.~Horowitz, A.~Strominger, and E.~Witten,
+``Vacuum configurations for superstrings,''
+Nucl. Phys. B \textbf{258}, 46 (1985).
+
+\bibitem{Witten1986}
+E.~Witten,
+``New issues in manifolds of \(SU(3)\) holonomy,''
+Nucl. Phys. B \textbf{268}, 79 (1986).
+
+\bibitem{Blumenhagen2007}
+R.~Blumenhagen, B.~Kors, D.~L\"ust, and S.~Stieberger,
+``Four-dimensional string compactifications with D-branes, orientifolds and fluxes,''
+Phys. Rept. \textbf{445}, 1 (2007),
+arXiv:hep-th/0610327.
+
+\bibitem{BeasleyHeckmanVafa2009}
+C.~Beasley, J.~J.~Heckman, and C.~Vafa,
+``GUTs and exceptional branes in F-theory I,''
+JHEP \textbf{01}, 058 (2009),
+arXiv:0802.3391.
+
+\bibitem{BordemannMeinrenkenSchlichenmaier1994}
+M.~Bordemann, E.~Meinrenken, and M.~Schlichenmaier,
+``Toeplitz quantization of K\"ahler manifolds and \(\mathfrak{gl}(N)\), \(N\to\infty\) limits,''
+Commun. Math. Phys. \textbf{165}, 281 (1994).
 
 \bibitem{BirrellDavies1982}
 N.~D.~Birrell and P.~C.~W.~Davies,
