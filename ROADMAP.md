@@ -807,6 +807,34 @@ Verification:
 - Confirmed the Fig. 2 source uses `\mp` and the conclusion keeps conditional
   protected-sector wording.
 
+### R27. Final Submission-Tone Micro-Polish
+
+Status: completed.
+
+This is a final wording/disclosure pass before treating the manuscript as a
+submission candidate.
+
+Required edits:
+
+- Lower the abstract wording from a broad low-energy spectrum statement to the
+  protected-sector contribution statement used in the conclusion.
+- Replace the nonstandard acknowledgments sentence about mathematical
+  foundations by a standard funding disclosure.
+- Search for over-strong wording such as `first-principles`, `unconditional`,
+  `the theory predicts`, `must`, `unique`, and `no fourth generation`, and
+  confirm any remaining occurrences are either qualified or technically local.
+
+Verification:
+
+- The abstract now says the protected SM-charged generation sector contributes
+  exactly three unpaired SM family copies to the four-dimensional low-energy
+  chiral spectrum under the stated gap/exclusivity assumptions.
+- Acknowledgments now state that the author reports no external funding.
+- Strong-wording search found no unqualified `first-principles`,
+  `the theory predicts`, `the theory has exactly`, or `no fourth generation`
+  language; remaining `unconditional`, `must`, and `unique` occurrences are
+  confined to caveats or technical local conditions.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
