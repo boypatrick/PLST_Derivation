@@ -1,4 +1,4 @@
-\documentclass[aps,prd,onecolumn,notitlepage,nofootinbib,superscriptaddress,11pt,floatfix]{revtex4-2}
+\documentclass[aps,prd,preprint,notitlepage,nofootinbib,superscriptaddress,floatfix]{revtex4-2}
 
 % -------- packages --------
 \usepackage{amsmath,amssymb,mathtools,bm}
@@ -12,9 +12,12 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc}
 \usepackage{hyperref}
-\hypersetup{hidelinks}
-\usepackage{geometry}
-\geometry{a4paper, margin=1in}
+\hypersetup{
+  hidelinks,
+  pdftitle={A Conditional Spin-c Dolbeault Index Theorem for Three Standard Model Family Copies in a Two-Center Projection Model},
+  pdfauthor={Bo-Yu Chen},
+  pdfsubject={Conditional Spin-c index-theoretic generation counting}
+}
 
 % -------- macros --------
 \newcommand{\dd}{\mathrm{d}}
@@ -60,12 +63,12 @@
 
 \begin{document}
 
-\title{\Large \bf \texorpdfstring{A Conditional Spin\(^c\) Dolbeault Derivation of Three Standard Model Family Copies in PSLT}{A Conditional Spinc Dolbeault Derivation of Three Standard Model Family Copies in PSLT}}
+\title{\texorpdfstring{A Conditional Spin\(^c\) Dolbeault Index Theorem for Three Standard Model Family Copies in a Two-Center Projection Model}{A Conditional Spinc Dolbeault Index Theorem for Three Standard Model Family Copies in a Two-Center Projection Model}}
 
 \author{Bo-Yu Chen}
 \affiliation{Independent Researcher}
 
-\date{May 1, 2026}
+\date{\today}
 
 \begin{abstract}
 We formulate a conditional Spin\(^c\) index-theoretic derivation of the three-family multiplicity of the Standard Model chiral representation in Projection Spectral Layer Theory (PSLT).
@@ -92,8 +95,6 @@ Scalar spectral data and the quantities \((g_N^{\rm chiral},\Gamma_N^{\rm eff},B
 \end{abstract}
 
 \maketitle
-\tableofcontents
-\newpage
 
 % ============================================================
 \section{Introduction and Core Structure}
@@ -415,11 +416,14 @@ After a fixed product-chirality projection, internal positive and negative zero 
 We choose the product chirality so that \(\Ker\scrD_R^+\) carries the left-handed SM family representation \(\cR_{\rm SM}\); \(\Ker\scrD_R^-\) would supply the opposite four-dimensional chirality in the same generation sector.
 Thus the chain is explicit:
 \begin{equation}
+\begin{gathered}
 \text{internal Spin}^c\text{ zero mode}
 \quad\Longrightarrow\quad
 \text{massless 4D Weyl fermion}
-\quad\Longrightarrow\quad
+\\
+\Longrightarrow\quad
 \text{SM chiral generation}.
+\end{gathered}
 \end{equation}
 
 All other SM-charged internal sectors are required to be vectorlike and genuinely gapped:

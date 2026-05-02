@@ -1,6 +1,6 @@
 # PLST Derivation Roadmap
 
-Last updated: 2026-05-01
+Last updated: 2026-05-02
 
 ## Positioning
 
@@ -13,8 +13,8 @@ condition from nothing.
 Recommended abstract/conclusion wording:
 
 ```text
-a first-principles projection-spectral derivation of the three-generation
-multiplicity of the SM chiral family representation, conditional on the PSLT
+a conditional Spin^c index-theoretic derivation of the three-family
+multiplicity of the SM chiral family representation, given the PSLT
 two-center projection data.
 ```
 
@@ -751,6 +751,33 @@ consistency checks, not new theory tasks.
   not a new unconditional string/QG vacuum-selection theorem.
 - Confirm final PDF presentation: page breaks, equation numbering, references,
   bibliography formatting, symbol consistency, and rendered overlines/accents.
+
+### R25. APS/PRL-Style Formatting Pass
+
+Status: completed.
+
+This pass aligns the manuscript with APS/REVTeX style expectations while
+retaining the PRD Regular Article target.  It does not attempt to compress the
+paper into a true PRL Letter; full PRL compliance would require a separate
+3750-word core-length rewrite and an End Matter split.
+
+Required edits:
+
+- Use a standard APS REVTeX submission-style document class rather than a
+  custom `onecolumn/notitlepage/11pt/a4` layout.
+- Remove manual title font commands and make the title self-contained,
+  concise, and less dependent on the nonstandard acronym `PSLT`.
+- Remove the table of contents from the manuscript body.
+- Keep all references title-consistent, since PRL strongly encourages titles
+  in all references if titles are used.
+
+Verification:
+
+- Updated `paper/main.tex` to `revtex4-2` with APS/PRD `preprint` style.
+- Replaced the title by a self-contained two-center projection-model title
+  without manual `\Large` or `\bf` formatting.
+- Removed the in-paper table of contents and the custom `geometry` layout.
+- Left the theory structure unchanged; this is a presentation/style pass only.
 
 ## Do Not Reopen
 
