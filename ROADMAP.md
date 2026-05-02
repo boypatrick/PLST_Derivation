@@ -593,6 +593,30 @@ new concrete mathematical error is found.  The next phase should be limited to
 final proofreading: layout, references, citation style, abstract/conclusion
 tone, symbol consistency, and PDF visual QA.
 
+### Final Proofreading Checklist
+
+Status: active.
+
+Use this checklist for the post-freeze pass.  These items are presentation and
+consistency checks, not new theory tasks.
+
+- Confirm that the abstract, main theorem, and conclusion all keep the
+  conditional framing: `conditional on the PSLT two-center projection data`.
+- Confirm that the paper consistently separates the two logical layers:
+  `scrD_R` fixes the Spin^c generation count, while
+  `(V_eff,Gamma_N^eff,B_N)` describe effective formation and visibility.
+- Confirm that every no-fourth-generation statement includes, or clearly points
+  back to, the exclusivity / vectorlike gap assumption for all other
+  SM-charged sectors.
+- Confirm that the "spin-1 Hilbert space" and Toeplitz-basis language is used
+  only as interpretation of the `H^0(CP^1,O(2))` result, not as a substitute
+  for the Riemann--Roch plus Serre-duality proof.
+- Confirm that the one-family hypercharge section keeps the minimal-content,
+  Yukawa-invariance, anomaly-cancellation, and normalization/global-group
+  caveats.
+- Confirm final PDF presentation: page breaks, equation numbering, references,
+  bibliography formatting, symbol consistency, and rendered overlines/accents.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
