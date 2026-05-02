@@ -894,6 +894,18 @@ Verification:
   and the object box no longer visually overlap.
 - No theorem text, assumptions, or physics content changed.
 
+### R31. Fig. 2 Left-Panel Label Clearance
+
+Status: completed.
+
+This is a final layout-only correction for the left panel of Fig. 2.
+
+Verification:
+
+- Lowered the bottom formula box in the spatial two-center chart so the
+  \(z_{\rm ax}=-D/2\) label has clear separation from the box.
+- No theorem text, assumptions, or physics content changed.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
