@@ -640,6 +640,53 @@ Verification:
 - Final PDF text-layer check found all six `FIG.` captions and `TABLE I`;
   spot-rendered pages 4, 5, 6, 11, 15, and 17 for visual QA.
 
+### R23. PRD Submission Polish: Tone, Caveats, and Figure Layout
+
+Status: completed.
+
+This is a final submission-polish pass, not a new theory-structure task.
+The goal is to reduce any remaining UV-parent-action overclaim, make small
+mathematical caveats explicit, and clean up the figure layout after the PRD
+figure/table integration.
+
+Required edits:
+
+- Rename Section II from `Parent Projection Data` to a softer projection-data
+  title and replace `parent action` language by an effective bookkeeping
+  decomposition.  The theorem should use the projection data and topological
+  constraint, not claim a UV-complete parent action.
+- Replace `exact no-fourth-generation theorem` wording by a conditional
+  no-fourth-family statement within the protected SM-charged sector.
+- Add the Hellinger-affinity explanation for `eta(D,epsilon)` and derive
+  `0 <= eta <= 1` from Cauchy--Schwarz for normalized source densities.
+- Add the nonzero visible-overlap assumption
+  `sum_I |y_I^eff|^2 > 0` before using the normalized `B_N`.
+- Clean up Fig. 2, Fig. 3/Fig. 4 float placement, and Fig. 6 readability.
+
+Acceptance criteria:
+
+- `paper/main.pdf` compiles without undefined references or citations.
+- The PDF text layer still contains all six figures and Table I.
+- Visual spot checks show the edited figures are not clipped or visually
+  tangled.
+- Local `PSLT_another_flow/paper/main.tex` and `main.pdf` are synced after
+  compilation.
+
+Verification:
+
+- Renamed Section II and softened `parent action` into the effective
+  bookkeeping decomposition `S_eff`; the text now explicitly says no
+  UV-complete parent action is derived here.
+- Replaced the exact no-fourth-generation phrasing by the conditional
+  no-fourth-family statement within the protected SM-charged sector.
+- Added the Hellinger-affinity / Cauchy--Schwarz explanation for `eta` and
+  the nonzero-overlap condition for the normalized `B_N`.
+- Cleaned Fig. 2 labels, inserted `FloatBarrier` around Fig. 3/Fig. 4, and
+  rewrote Fig. 6 as a clearer two-layer post-index interface.
+- Recompiled `paper/main.pdf`; text-layer checks found all six figures,
+  Table I, and the new caveat language; visually spot-checked the changed
+  figure pages.
+
 ### Final Proofreading Checklist
 
 Status: active.

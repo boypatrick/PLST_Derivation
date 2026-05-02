@@ -6,6 +6,7 @@
 \usepackage{mathrsfs}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{placeins}
 \usepackage{xurl}
 \usepackage{xcolor}
 \usepackage{tikz}
@@ -235,7 +236,7 @@ The Bergman projector onto \(H^0(C,L_R)\) is \(P_R\), the collective-coordinate 
 The protected zero-mode degeneracy is denoted \(g_N^{\rm chiral}\); any unadorned degeneracy symbol is avoided in the chiral family count.
 
 % ============================================================
-\section{Parent Projection Data}
+\section{Two-Center Projection Data and Topological Constraint}
 \label{sec:parent_data}
 
 Let \(M_4\) be four-dimensional spacetime and let the compact projection surface be
@@ -249,9 +250,9 @@ R=p_+ + p_-,
 L_R=\cO(R)\simeq\cO(2).
 \label{eq:LR_def}
 \end{equation}
-The parent action is organized as
+For bookkeeping we denote a possible effective decomposition by
 \begin{equation}
-S_{\rm FP}
+S_{\rm eff}
 =
 S_{\rm grav}
 +S_{\rm gauge}
@@ -262,6 +263,8 @@ S_{\rm grav}
 +S_{\rm vis}.
 \label{eq:parent_action}
 \end{equation}
+No UV-complete parent action is derived in this paper.
+The theorem uses only the projection data and the cohomological constraint below.
 The projection sector fixes the topological class of \(L_R\), not a pointwise equality between a smooth curvature form and a delta-current.
 The robust condition is the cohomological constraint
 \begin{equation}
@@ -310,8 +313,8 @@ The topological input is Eq.~\eqref{eq:Sproj_cohomology}; Eq.~\eqref{eq:Sproj} i
 \draw[densely dotted] (-5.55,-0.75) -- (-1.25,-0.75) node[right] {\(z_{\rm ax}=0\)};
 \fill (-5.1,0.85) circle (2pt) node[left] {\(x_+\)};
 \fill (-5.1,-1.45) circle (2pt) node[left] {\(x_-\)};
-\node[right] at (-4.95,0.85) {\(z_{\rm ax}=+D/2\)};
-\node[right] at (-4.95,-1.45) {\(z_{\rm ax}=-D/2\)};
+\node[above left] at (-5.25,0.85) {\(z_{\rm ax}=+D/2\)};
+\node[below left] at (-5.25,-1.45) {\(z_{\rm ax}=-D/2\)};
 \coordinate (probe) at (-2.4,0.55);
 \fill (probe) circle (1.5pt) node[above right] {\((\rho,z_{\rm ax},\varphi)\)};
 \draw[gray] (-5.1,0.85) -- (probe) node[midway, above] {\(r_+\)};
@@ -462,8 +465,8 @@ SM-neutral sectors may be present, but they do not carry generation quantum numb
 \cE_{\rm neutral}.
 \label{eq:fermion_sector_decomp}
 \end{equation}
-This is the exclusivity condition needed for an exact no-fourth-generation theorem.
-Without it, an additional SM-charged internal bundle with nonzero index could produce extra chiral matter.
+This is the exclusivity condition needed for the conditional no-fourth-family statement within the protected SM-charged sector.
+Without it, the Spin\(^c\) theorem proves only the three-dimensionality of the protected generation sector, not the absence of additional SM-charged chiral sectors.
 
 % ============================================================
 \section{One Standard Model Family}
@@ -695,6 +698,7 @@ E=K_C^{-1/2}\otimes L_R=\cO(1)\otimes\cO(2)=\cO(3)
 so that \(K_C^{1/2}\otimes E=L_R\).
 \end{remark}
 
+\FloatBarrier
 \begin{figure}[t]
 \centering
 \resizebox{\linewidth}{!}{%
@@ -743,6 +747,7 @@ An ordinary spin Dirac operator on \(\CP^1\) includes \(K_C^{1/2}=\cO(-1)\); twi
 Thus the Spin\(^c\) carrier is part of the stated protected sector, not an interchangeable notation.}
 \label{fig:spinc_vs_spin}
 \end{figure}
+\FloatBarrier
 
 % ============================================================
 \section{Three-Generation Theorem}
@@ -934,6 +939,7 @@ For the symmetric two-center placement and the standard Fubini--Study/Bergman in
 \begin{equation}
 1,\qquad \zeta,\qquad \zeta^2.
 \end{equation}
+In this symmetric realization \(\mathcal T_R\) is diagonal in the monomial basis and has three distinct axial weights; after the orientation of the ordered pair \((p_+,p_-)\) is fixed, it canonically orders the three one-dimensional eigenspaces.
 The Toeplitz definition is the physical statement for labeling the already three-dimensional protected space; it is not a substitute for the Riemann--Roch and Serre-duality dimension argument.
 The monomial basis is only a convenient coordinate representation.
 
@@ -965,7 +971,7 @@ Its eigenvectors define the canonical generation basis, equivalent for the symme
 \label{sec:two_center_geometry}
 
 The two-center conformal factor is obtained in the static sector.
-The covariant parent term \(S_\Omega^{\rm cov}\) in Eq.~\eqref{eq:parent_action} is not specified by the spatial expression below; rather, under the static two-center ansatz it reduces to the three-dimensional variational energy functional
+The covariant effective term \(S_\Omega^{\rm cov}\) in Eq.~\eqref{eq:parent_action} is not specified by the spatial expression below; rather, under the static two-center ansatz it reduces to the three-dimensional variational energy functional
 \begin{equation}
 E_\Omega
 =
@@ -1105,21 +1111,25 @@ The interface data used below are precisely \(\mathfrak D_{\rm int}(D)\) from Eq
 \begin{figure}[t]
 \centering
 \resizebox{\linewidth}{!}{%
-\begin{tikzpicture}[node distance=0.72cm and 0.55cm]
+\begin{tikzpicture}[node distance=0.75cm and 0.8cm]
 \node[psltoutput, text width=0.76\linewidth] (fixed) {Already fixed by the Spin\(^c\) theorem: protected labels \(N=1,2,3\) and modes \(u_N\in H^0(\CP^1,\cO(2))\).};
-\node[psltinput, text width=0.18\linewidth, below=of fixed, xshift=-3.5cm] (omega) {\(\Omega(\rho,z;D)\)};
+
+\node[psltinput, text width=0.20\linewidth, below=0.9cm of fixed, xshift=-2.6cm] (omega) {\(\Omega(\rho,z;D)\)};
 \node[psltbox, text width=0.18\linewidth, right=of omega] (veff) {\(V_{\rm eff}\)};
-\node[psltbox, text width=0.22\linewidth, right=of veff] (scalar_modes) {\(L_\Omega\psi_n=\omega_n^2\psi_n\)};
-\node[psltbox, text width=0.22\linewidth, right=of scalar_modes] (locking) {\(\mu_{nN}\)\\hard/soft assignment};
-\node[psltbox, text width=0.22\linewidth, below=0.8cm of scalar_modes] (rates2) {\(\Gamma_N^{\rm eff},\ B_N\)};
-\node[psltoutput, text width=0.30\linewidth, right=of rates2] (prob) {\(\displaystyle P_N(t)=
-\frac{B_Ng_N^{\rm chiral}(1-\ee^{-\Gamma_N^{\rm eff}t})}
-{\sum_{K=1}^3B_Kg_K^{\rm chiral}(1-\ee^{-\Gamma_K^{\rm eff}t})}\)};
+\node[psltbox, text width=0.26\linewidth, right=of veff] (scalar_modes) {\(L_\Omega\psi_n=\omega_n^2\psi_n\)};
 \draw[psltarrow] (omega) -- (veff);
 \draw[psltarrow] (veff) -- (scalar_modes);
-\draw[psltarrow] (scalar_modes) -- (locking);
-\draw[psltarrow] (locking.south) |- (rates2.east);
-\draw[psltarrow] (rates2) -- (prob);
+
+\node[psltbox, text width=0.24\linewidth, below=0.9cm of scalar_modes, xshift=-1.7cm] (locking) {\(\mu_{nN}\)\\hard/soft assignment};
+\node[psltbox, text width=0.22\linewidth, right=of locking] (rates2) {\(\Gamma_N^{\rm eff},\ B_N\)};
+\draw[psltarrow] (scalar_modes.south) |- (locking.north);
+\draw[psltarrow] (locking) -- (rates2);
+
+\node[psltoutput, text width=0.68\linewidth] (prob) at ($(locking.south)!0.5!(rates2.south)+(0,-1.1cm)$) {\(\displaystyle
+P_N(t)=
+\frac{B_Ng_N^{\rm chiral}(1-\ee^{-\Gamma_N^{\rm eff}t})}
+{\sum_{K=1}^3B_Kg_K^{\rm chiral}(1-\ee^{-\Gamma_K^{\rm eff}t})}\)};
+\draw[psltarrow] (rates2.south) -- (prob.north);
 \node[psltdash, fit=(omega)(veff)(scalar_modes)(locking)(rates2)(prob), label={[font=\footnotesize]below:Post-index effective interface, not an input to the proof of \(N_{\rm gen}=3\)}] {};
 \end{tikzpicture}
 }
@@ -1311,6 +1321,8 @@ For the regulated source model, we take
 }
 \label{eq:eta_def}
 \end{equation}
+Since \(\rho_\varepsilon\) is normalized, Eq.~\eqref{eq:eta_def} is the Hellinger affinity of the two regulated source densities.
+The bound \(0\le\eta\le1\) follows from Cauchy--Schwarz, with \(\eta=1\) only for coincident identical profiles.
 It enters the fluctuation operator, WKB prefactors, and center mixing coefficient:
 \begin{equation}
 \cK_N=\cK_N(D,\eta),
@@ -1510,6 +1522,12 @@ B_N
 }
 \label{eq:BN}
 \end{equation}
+We assume the visible kernel is not orthogonal to the entire protected generation space, so that
+\begin{equation}
+\sum_{I=1}^{3}|y_I^{\rm eff}|^2>0.
+\label{eq:BN_denominator_nonzero}
+\end{equation}
+Under this nonzero-overlap condition the normalized weights \(B_N\) are well defined.
 For the operator notation in the equivalent form, define the linear visible-overlap functional
 \begin{equation}
 \mathcal O_{\rm vis}:\cH_{\rm gen}\longrightarrow\mathbb C,
