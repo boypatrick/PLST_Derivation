@@ -593,6 +593,53 @@ new concrete mathematical error is found.  The next phase should be limited to
 final proofreading: layout, references, citation style, abstract/conclusion
 tone, symbol consistency, and PDF visual QA.
 
+### R22. PRD Figure and Table Integration
+
+Status: completed.
+
+Add the PRD submission figure/table layer as reader guidance, not as new
+theory.  The figures should make the theorem boundary visually explicit:
+`D_gen=(C,R,L_R,scrD_R)` proves the Spin^c family multiplicity, while
+`D_int(D)=(pi_D,j_D,w_D,J_vis)` supplies only the post-index
+formation/visibility interface.
+
+Required main-text items:
+
+- Fig. 1 `fig:logical_architecture`: logical architecture of the SM charge
+  layer, protected Spin^c theorem layer, and post-index interface layer.
+- Fig. 2 `fig:two_center_projection`: two-center spatial projection geometry,
+  the branch points `p_+`, `p_-`, the divisor `R=p_+ + p_-`, and
+  `L_R=O(R)=O(2)`.
+- Fig. 3 `fig:index_chain`: index-theoretic proof chain from `R` and `L_R`
+  to `Ker scrD_R^+`, `h^0=3`, `h^1=0`, and three SM family copies.
+- Fig. 4 `fig:spinc_vs_spin`: Spin^c Dolbeault--Dirac carrier versus the
+  ordinary spin Dirac counting shift.
+- Fig. 5 `fig:toeplitz_basis`: Toeplitz moment-map operator as
+  canonicalization of the three labels, not as a replacement for
+  Riemann--Roch plus Serre duality.
+- Fig. 6 `fig:post_index_interface`: scalar spectral and formation/visibility
+  interface, explicitly marked as not an input to the proof of `N_gen=3`.
+- Table 1 `tab:assumption_boundary`: assumption boundary and theorem scope.
+
+Acceptance criteria:
+
+- All six figure environments and Table I compile into `paper/main.pdf`.
+- Captions consistently state which objects are theorem inputs, theorem
+  consequences, and post-index effective data.
+- The graphics remain black-and-white friendly and do not introduce new
+  phenomenological claims.
+- The final PDF text layer contains all six `FIG.` captions and `TABLE I`.
+
+Verification:
+
+- Added and compiled Fig. 1--Fig. 6 with labels
+  `fig:logical_architecture`, `fig:two_center_projection`,
+  `fig:index_chain`, `fig:spinc_vs_spin`, `fig:toeplitz_basis`, and
+  `fig:post_index_interface`.
+- Added and compiled Table I with label `tab:assumption_boundary`.
+- Final PDF text-layer check found all six `FIG.` captions and `TABLE I`;
+  spot-rendered pages 4, 5, 6, 11, 15, and 17 for visual QA.
+
 ### Final Proofreading Checklist
 
 Status: active.

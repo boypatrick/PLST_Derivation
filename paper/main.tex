@@ -8,6 +8,8 @@
 \usepackage{array}
 \usepackage{xurl}
 \usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc}
 \usepackage{hyperref}
 \hypersetup{hidelinks}
 \usepackage{geometry}
@@ -38,6 +40,15 @@
 \newcommand{\Order}{\mathcal O}
 \setlength{\emergencystretch}{2em}
 \allowdisplaybreaks
+
+\tikzset{
+  psltbox/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, font=\small, fill=black!3},
+  psltthin/.style={draw, rounded corners=2pt, align=center, inner sep=3pt, font=\footnotesize, fill=black!2},
+  psltinput/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, font=\small, fill=black!8},
+  psltoutput/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, font=\small\bfseries, fill=black!12},
+  psltarrow/.style={-{Latex[length=2mm]}, thick},
+  psltdash/.style={draw, dashed, rounded corners=3pt, inner sep=6pt}
+}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
@@ -161,6 +172,60 @@ The low-energy chiral spectrum is therefore
 \end{equation}
 The family count is the dimension of the positive internal Spin\(^c\) fermion zero-mode space.
 
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[node distance=1.0cm and 0.8cm]
+\node[psltinput, text width=0.23\linewidth] (charge) {SM charge layer\\[1mm]\(\text{Yukawa}+\text{anomalies}\)\\\(\Longrightarrow \cR_{\rm SM}\)};
+\node[psltinput, text width=0.25\linewidth, right=of charge] (geninput) {Theorem inputs\\[1mm]\(\mathfrak D_{\rm gen}=(C,R,L_R,\scrD_R)\)};
+\node[psltbox, text width=0.25\linewidth, right=of geninput] (hodge) {Spin\(^c\) zero modes\\[1mm]\(\Ker\scrD_R^+\simeq H^0(C,L_R)\)};
+\node[psltoutput, text width=0.16\linewidth, right=of hodge] (ngen) {\(N_{\rm gen}=3\)};
+\draw[psltarrow] (charge) -- (geninput);
+\draw[psltarrow] (geninput) -- (hodge);
+\draw[psltarrow] (hodge) -- (ngen);
+
+\node[psltthin, text width=0.28\linewidth, below=1.1cm of geninput] (interface) {Post-index interface data\\[1mm]\(\mathfrak D_{\rm int}(D)=(\pi_D,\mathfrak j_D,w_D,\mathcal J_{\rm vis})\)};
+\node[psltthin, text width=0.25\linewidth, right=of interface] (scalar) {Scalar spectral layer\\[1mm]\(\Omega,V_{\rm eff},\psi_n,\omega_n\)};
+\node[psltthin, text width=0.22\linewidth, right=of scalar] (rates) {Effective outputs\\[1mm]\(\Gamma_N^{\rm eff},B_N,P_N(t)\)};
+\draw[psltarrow] (interface) -- (scalar);
+\draw[psltarrow] (scalar) -- (rates);
+
+\node[psltdash, fit=(geninput)(hodge)(ngen), label={[font=\footnotesize]above:Theorem layer}] {};
+\node[psltdash, fit=(interface)(scalar)(rates), label={[font=\footnotesize]below:Formation/visibility layer, not an input to \(N_{\rm gen}\)}] {};
+\end{tikzpicture}
+}
+\caption{Logical architecture of the PSLT Spin\(^c\) generation theorem.
+The Standard Model charge layer fixes one anomaly-free chiral family representation \(\cR_{\rm SM}\).
+The protected internal fermion layer uses the two-center projection data \(C=\CP^1\), \(R=p_+ + p_-\), \(L_R=\cO(R)\simeq\cO(2)\), and the Spin\(^c\) Dolbeault--Dirac operator \(\scrD_R\) to prove the family multiplicity through \(\Ker\scrD_R^+\simeq H^0(C,L_R)\).
+The scalar spectral, kinetic, and visibility data form a post-index effective interface and are not inputs to the theorem \(N_{\rm gen}=3\).}
+\label{fig:logical_architecture}
+\end{figure}
+
+\begin{table}[t]
+\caption{Assumption boundary and theorem scope.
+The theorem proves the three-family multiplicity inside the protected PSLT Spin\(^c\) generation sector.
+Effective scalar spectral quantities and formation/visibility weights are post-index interface data and are not used to prove \(N_{\rm gen}=3\).}
+\label{tab:assumption_boundary}
+\centering
+\small
+\newcommand{\tblcell}[2]{\parbox[t]{#1}{#2}}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\tblcell{1.75in}{Object or claim} & \tblcell{1.85in}{Status in this paper} & \tblcell{2.15in}{Role} \\
+\midrule
+\tblcell{1.75in}{\(C=\CP^1\)} & \tblcell{1.85in}{PSLT two-center projection datum} & \tblcell{2.15in}{Input} \\
+\tblcell{1.75in}{\(R=p_+ + p_-\)} & \tblcell{1.85in}{PSLT branch divisor} & \tblcell{2.15in}{Input} \\
+\tblcell{1.75in}{\(L_R=\cO(R)\simeq\cO(2)\)} & \tblcell{1.85in}{Determined by \(R\) on \(\CP^1\)} & \tblcell{2.15in}{Generation line bundle} \\
+\tblcell{1.75in}{\(\Lambda^{0,*}T^*C\otimes L_R\)} & \tblcell{1.85in}{Assumed protected carrier} & \tblcell{2.15in}{Spin\(^c\) internal fermion sector} \\
+\tblcell{1.75in}{\(\scrD_R\)} & \tblcell{1.85in}{Specified Spin\(^c\) Dolbeault--Dirac operator} & \tblcell{2.15in}{Counts protected zero modes} \\
+\tblcell{1.75in}{\(h^0=3,\ h^1=0\)} & \tblcell{1.85in}{Theorem consequence} & \tblcell{2.15in}{Three protected chiral copies} \\
+\tblcell{1.75in}{Vectorlike gap for other SM-charged sectors} & \tblcell{1.85in}{Assumption} & \tblcell{2.15in}{Excludes extra light SM-charged exotics} \\
+\tblcell{1.75in}{\(\Omega,V_{\rm eff},\Gamma_N^{\rm eff},B_N,P_N\)} & \tblcell{1.85in}{Effective post-index interface} & \tblcell{2.15in}{Formation/visibility, not family-count proof} \\
+\tblcell{1.75in}{UV derivation of \((C,R,L_R)\)} & \tblcell{1.85in}{Not proven here} & \tblcell{2.15in}{Future strengthening} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{Notation conventions}
 \label{sec:notation_conventions}
 
@@ -232,6 +297,52 @@ S_{\rm proj}^{\rm top}
 \end{equation}
 where \(J_R^{(\varepsilon)}\) is any smooth representative of \(\operatorname{PD}(R)\) that tends, as a current, to \(\delta_{p_+}^{(2)}+\delta_{p_-}^{(2)}\).
 The topological input is Eq.~\eqref{eq:Sproj_cohomology}; Eq.~\eqref{eq:Sproj} is only a regulated implementation of the same cohomology class.
+
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[scale=1.0, every node/.style={font=\footnotesize}]
+% spatial panel
+\node[font=\small\bfseries] at (-3.2,2.35) {(a) Spatial two-center chart};
+\draw[->, thick] (-5.1,-1.6) -- (-5.1,1.55) node[left] {\(z_{\rm ax}\)};
+\draw[->, thick] (-5.4,0) -- (-1.1,0) node[right] {\(\rho\)};
+\draw[dashed] (-5.5,0) -- (-1.2,0);
+\draw[densely dotted] (-5.55,-0.75) -- (-1.25,-0.75) node[right] {\(z_{\rm ax}=0\)};
+\fill (-5.1,0.85) circle (2pt) node[left] {\(x_+\)};
+\fill (-5.1,-1.45) circle (2pt) node[left] {\(x_-\)};
+\node[right] at (-4.95,0.85) {\(z_{\rm ax}=+D/2\)};
+\node[right] at (-4.95,-1.45) {\(z_{\rm ax}=-D/2\)};
+\coordinate (probe) at (-2.4,0.55);
+\fill (probe) circle (1.5pt) node[above right] {\((\rho,z_{\rm ax},\varphi)\)};
+\draw[gray] (-5.1,0.85) -- (probe) node[midway, above] {\(r_+\)};
+\draw[gray] (-5.1,-1.45) -- (probe) node[midway, below] {\(r_-\)};
+\node[psltthin, text width=0.34\linewidth] at (-3.25,-2.45)
+{\(r_\pm=\sqrt{\rho^2+(z_{\rm ax}\mp D/2)^2+\varepsilon^2}\)\\
+\(\zeta_R=(r_+/r_-)^{1/2}\ee^{\ii\varphi}\)};
+
+% arrow
+\draw[psltarrow] (-0.7,0.0) -- (0.7,0.0) node[midway, above] {\(\pi_D\)};
+
+% CP1 panel
+\node[font=\small\bfseries] at (3.1,2.35) {(b) Projection surface \(C\simeq\CP^1\)};
+\draw[thick] (3.1,0.05) circle (1.35);
+\draw[dashed] (1.75,0.05) arc[start angle=180,end angle=360,x radius=1.35,y radius=0.32];
+\draw (1.75,0.05) arc[start angle=180,end angle=0,x radius=1.35,y radius=0.32];
+\fill (3.1,1.4) circle (2pt) node[above] {\(p_+=[1:0]\)};
+\fill (3.1,-1.3) circle (2pt) node[below] {\(p_-=[0:1]\)};
+\node[psltoutput, text width=0.30\linewidth] at (3.1,-2.65)
+{\(R=p_+ + p_-\)\\
+\(\deg R=2\)\\
+\(L_R=\cO(R)\simeq\cO(2)\)};
+\end{tikzpicture}
+}
+\caption{Two-center projection geometry and the generation divisor.
+The spatial chart contains two ordered centers \(x_\pm\) at \(z_{\rm ax}=\pm D/2\), with regulated distances \(r_\pm\).
+The projection map \(\pi_D\) sends the regulated two-center chart to \(C\simeq\CP^1\), and in the collapsed-core limit maps the centers to the branch points \(p_+\) and \(p_-\).
+The divisor \(R=p_+ + p_-\) has degree two and defines the generation line bundle \(L_R=\cO(R)\simeq\cO(2)\).
+The midplane normalization \(z_{\rm ax}=0\Rightarrow |\zeta_R|=1\) fixes the residual scale of the affine coordinate.}
+\label{fig:two_center_projection}
+\end{figure}
 
 \subsection{SM-charged fermion sector}
 \label{sec:sm_fermion_sector}
@@ -584,6 +695,55 @@ E=K_C^{-1/2}\otimes L_R=\cO(1)\otimes\cO(2)=\cO(3)
 so that \(K_C^{1/2}\otimes E=L_R\).
 \end{remark}
 
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[node distance=0.65cm and 0.55cm]
+\node[psltinput, text width=0.18\linewidth] (div) {\(R=p_+ + p_-\)\\\(\deg R=2\)};
+\node[psltinput, text width=0.18\linewidth, right=of div] (bundle) {\(L_R=\cO(R)\)\\\(\simeq\cO(2)\)};
+\node[psltbox, text width=0.23\linewidth, right=of bundle] (dirac) {\(\scrD_R=\sqrt2(\bar\partial_{L_R}+\bar\partial_{L_R}^{\dagger})\)\\on \(\Lambda^{0,*}T^*C\otimes L_R\)};
+\node[psltbox, text width=0.23\linewidth, right=of dirac] (hodge2) {\(\Ker\scrD_R^+\cong H^0(C,L_R)\)\\\(\Ker\scrD_R^-\cong H^1(C,L_R)\)};
+\draw[psltarrow] (div) -- (bundle);
+\draw[psltarrow] (bundle) -- (dirac);
+\draw[psltarrow] (dirac) -- (hodge2);
+
+\node[psltbox, text width=0.30\linewidth, below=1.0cm of bundle] (rr) {Riemann--Roch + Serre duality\\[1mm]\(h^0(\CP^1,\cO(2))=3\), \(\ h^1(\CP^1,\cO(2))=0\)};
+\node[psltoutput, text width=0.34\linewidth, right=1.0cm of rr] (families) {\(\cR_{\rm SM}\otimes\Ker\scrD_R^+\)\\[1mm]\(=\cR_{\rm SM}^{(1)}\oplus\cR_{\rm SM}^{(2)}\oplus\cR_{\rm SM}^{(3)}\)};
+\draw[psltarrow] (hodge2.south) -- ++(0,-0.35) -| (rr.north);
+\draw[psltarrow] (rr) -- (families);
+\end{tikzpicture}
+}
+\caption{Spin\(^c\) index-theoretic origin of the three protected families.
+The two-center divisor fixes \(L_R=\cO(2)\).
+The protected internal fermion operator is the Spin\(^c\) Dolbeault--Dirac operator, whose positive and negative kernels are identified by Hodge theory with \(H^0(C,L_R)\) and \(H^1(C,L_R)\).
+For \(C=\CP^1\), Riemann--Roch and Serre duality give \(h^0=3\) and \(h^1=0\), so the positive internal zero-mode space produces three four-dimensional SM chiral family copies.}
+\label{fig:index_chain}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[node distance=0.7cm and 0.9cm]
+\node[psltinput, text width=0.40\linewidth] (spinc) {Protected Spin\(^c\) carrier\\[1mm]\(\Lambda^{0,*}T^*C\otimes L_R\), \(\ L_R=\cO(2)\)};
+\node[psltinput, text width=0.40\linewidth, right=of spinc] (spin) {Ordinary spin Dirac with same twist\\[1mm]\(K_C^{1/2}\otimes\cO(2)\), \(\ K_C^{1/2}=\cO(-1)\)};
+
+\node[psltbox, text width=0.40\linewidth, below=of spinc] (spinc_count) {Counts\\\(\displaystyle H^0(\CP^1,\cO(2))\)\\[1mm]\(\dim=3\)};
+\node[psltbox, text width=0.40\linewidth, below=of spin] (spin_count) {Would count\\\(\displaystyle H^0(\CP^1,\cO(1))\)\\[1mm]\(\dim=2\)};
+\draw[psltarrow] (spinc) -- (spinc_count);
+\draw[psltarrow] (spin) -- (spin_count);
+
+\node[psltoutput, text width=0.73\linewidth] (equiv) at ($(spinc_count.south)!0.5!(spin_count.south)+(0,-1.1cm)$) {Equivalent ordinary-spin presentation requires\\[1mm]\(E=K_C^{-1/2}\otimes L_R=\cO(3)\), so \(K_C^{1/2}\otimes E=L_R\).};
+\draw[psltarrow] (spinc_count.south) -- (equiv.north west);
+\draw[psltarrow] (spin_count.south) -- (equiv.north east);
+\end{tikzpicture}
+}
+\caption{Why the Spin\(^c\) Dolbeault--Dirac representative is essential.
+The protected sector used here is the canonical Spin\(^c\) bundle \(\Lambda^{0,*}T^*C\) twisted by \(L_R=\cO(2)\), and it counts \(H^0(\CP^1,\cO(2))\), giving three positive zero modes.
+An ordinary spin Dirac operator on \(\CP^1\) includes \(K_C^{1/2}=\cO(-1)\); twisting it only by \(\cO(2)\) would count \(H^0(\CP^1,\cO(1))\), which is two-dimensional.
+Thus the Spin\(^c\) carrier is part of the stated protected sector, not an interchangeable notation.}
+\label{fig:spinc_vs_spin}
+\end{figure}
+
 % ============================================================
 \section{Three-Generation Theorem}
 \label{sec:three_generation_theorem}
@@ -777,6 +937,29 @@ For the symmetric two-center placement and the standard Fubini--Study/Bergman in
 The Toeplitz definition is the physical statement for labeling the already three-dimensional protected space; it is not a substitute for the Riemann--Roch and Serre-duality dimension argument.
 The monomial basis is only a convenient coordinate representation.
 
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[node distance=0.85cm and 1.0cm]
+\node[psltinput, text width=0.28\linewidth] (moment) {Two-center moment map\\[1mm]\(\displaystyle \mu_R=\frac{|\zeta_R|^2-1}{|\zeta_R|^2+1}\)};
+\node[psltbox, text width=0.26\linewidth, right=of moment] (toeplitz) {Toeplitz operator\\[1mm]\(\mathcal T_R=P_RM_{\mu_R}P_R\)};
+\node[psltoutput, text width=0.30\linewidth, right=of toeplitz] (basis) {Canonical labels\\[1mm]\(\mathcal T_Ru_N=\tau_Nu_N\)\\\(N=1,2,3\)};
+\draw[psltarrow] (moment) -- (toeplitz);
+\draw[psltarrow] (toeplitz) -- (basis);
+
+\node[psltthin, text width=0.35\linewidth, below=0.9cm of moment] (sphere) {On \(C\simeq\CP^1\), \(\mu_R\) is the axial coordinate selected by the ordered branch points and the normalized affine coordinate \(\zeta_R\).};
+\node[psltthin, text width=0.43\linewidth, right=of sphere] (countnote) {This construction canonicalizes the basis of the already fixed space \(H^0(\CP^1,\cO(2))\); it does not replace the Riemann--Roch plus Serre-duality proof of \(\dim=3\).};
+\draw[psltarrow] (sphere) -- (countnote);
+\end{tikzpicture}
+}
+\caption{Canonical family labels from the two-center Toeplitz operator.
+The family count \(\dim H^0(\CP^1,\cO(2))=3\) is basis-independent, but physical labels require a canonical Hermitian operator.
+The two-center projection fixes the affine coordinate \(\zeta_R\), hence the axial moment-map function \(\mu_R\).
+Projecting multiplication by \(\mu_R\) onto the protected holomorphic section space gives the Toeplitz operator \(\mathcal T_R=P_RM_{\mu_R}P_R\).
+Its eigenvectors define the canonical generation basis, equivalent for the symmetric two-center placement to the spin-one monomial basis \(1,\zeta,\zeta^2\) up to normalization and ordering.}
+\label{fig:toeplitz_basis}
+\end{figure}
+
 % ============================================================
 \section{Two-Center Conformal Geometry}
 \label{sec:two_center_geometry}
@@ -918,6 +1101,34 @@ It does not determine the number of chiral SM generations; that number is fixed 
 The structures in this section are an effective formation/visibility model built on the Spin\(^c\) generation theorem.
 They use scalar spectral data and two-center collective coordinates to parametrize rates and overlaps; they do not supply an independent proof of the number of chiral SM generations.
 The interface data used below are precisely \(\mathfrak D_{\rm int}(D)\) from Eq.~\eqref{eq:interface_data}; changing them changes the effective formation/visibility model, not the Spin\(^c\) multiplicity result.
+
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[node distance=0.72cm and 0.55cm]
+\node[psltoutput, text width=0.76\linewidth] (fixed) {Already fixed by the Spin\(^c\) theorem: protected labels \(N=1,2,3\) and modes \(u_N\in H^0(\CP^1,\cO(2))\).};
+\node[psltinput, text width=0.18\linewidth, below=of fixed, xshift=-3.5cm] (omega) {\(\Omega(\rho,z;D)\)};
+\node[psltbox, text width=0.18\linewidth, right=of omega] (veff) {\(V_{\rm eff}\)};
+\node[psltbox, text width=0.22\linewidth, right=of veff] (scalar_modes) {\(L_\Omega\psi_n=\omega_n^2\psi_n\)};
+\node[psltbox, text width=0.22\linewidth, right=of scalar_modes] (locking) {\(\mu_{nN}\)\\hard/soft assignment};
+\node[psltbox, text width=0.22\linewidth, below=0.8cm of scalar_modes] (rates2) {\(\Gamma_N^{\rm eff},\ B_N\)};
+\node[psltoutput, text width=0.30\linewidth, right=of rates2] (prob) {\(\displaystyle P_N(t)=
+\frac{B_Ng_N^{\rm chiral}(1-\ee^{-\Gamma_N^{\rm eff}t})}
+{\sum_{K=1}^3B_Kg_K^{\rm chiral}(1-\ee^{-\Gamma_K^{\rm eff}t})}\)};
+\draw[psltarrow] (omega) -- (veff);
+\draw[psltarrow] (veff) -- (scalar_modes);
+\draw[psltarrow] (scalar_modes) -- (locking);
+\draw[psltarrow] (locking.south) |- (rates2.east);
+\draw[psltarrow] (rates2) -- (prob);
+\node[psltdash, fit=(omega)(veff)(scalar_modes)(locking)(rates2)(prob), label={[font=\footnotesize]below:Post-index effective interface, not an input to the proof of \(N_{\rm gen}=3\)}] {};
+\end{tikzpicture}
+}
+\caption{Post-index scalar spectral interface for formation and visibility.
+After the Spin\(^c\) index theorem has fixed the protected generation space to three modes, the two-center scalar geometry supplies an effective interface for profiles, rates, and visible overlaps.
+The conformal factor \(\Omega\) determines \(V_{\rm eff}\), whose scalar eigenmodes \(\psi_n\) are connected to the protected labels only through scalarization weights and hard/soft assignment.
+The probability law \(P_N(t)\) describes post-index formation and visibility of \(N=1,2,3\); it is not an additional input to the proof of the family multiplicity.}
+\label{fig:post_index_interface}
+\end{figure}
 
 For the protected chiral sector, let \(\Pi_N=|u_N\rangle\langle u_N|\) be the projector onto the Toeplitz eigenmode \(u_N\).
 The chiral degeneracy is
