@@ -862,6 +862,24 @@ Verification:
   Remaining `unconditional`, `must`, and `unique` uses are caveats or local
   technical conditions.
 
+### R29. Final Mechanical Proofreading Freeze
+
+Status: completed.
+
+This is the final non-theoretical cleanup before freezing the manuscript as a
+PRD Regular Article submission candidate.
+
+Verification:
+
+- Standardized the conclusion to write `L_R=\cO(R)\simeq\cO(2)` rather than
+  identifying the two bundles by equality.
+- Checked visible `Spin^c` typesetting in the source and normalized the lone
+  displayed-chain occurrence to a superscripted form.
+- Repeated the strong-wording search. Remaining `unconditional`, `must`, and
+  `unique` occurrences are caveats or local technical conditions, and no
+  unqualified `first-principles`, `the theory predicts`, `theory has exactly`,
+  or `no fourth generation` language remains.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
