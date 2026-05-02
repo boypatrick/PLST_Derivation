@@ -835,6 +835,33 @@ Verification:
   language; remaining `unconditional`, `must`, and `unique` occurrences are
   confined to caveats or technical local conditions.
 
+### R28. Final Toeplitz Figure Placement Polish
+
+Status: completed.
+
+This is a final layout/readability pass for Section VI.B.
+
+Required edits:
+
+- Prevent Fig. 5 from floating between the sentence defining the Toeplitz
+  operator and its domain/definition clause.
+- Keep the Toeplitz basis language as canonical labeling of the already fixed
+  three-dimensional space, not as a replacement proof of the family count.
+- Repeat the strong-wording safety search after the edit.
+
+Verification:
+
+- Rewrote the Toeplitz definition as
+  `Define the finite-dimensional Toeplitz operator on H^0(C,L_R) by ...`,
+  so the definition is syntactically complete before any figure can appear.
+- Added local `FloatBarrier` commands before and after Fig. 5 to keep it with
+  the completed Toeplitz-basis discussion and prevent it from floating back
+  into the definition paragraph.
+- Strong-wording search found no unqualified `first-principles`,
+  `theory predicts`, `theory has exactly`, or `no fourth generation` language.
+  Remaining `unconditional`, `must`, and `unique` uses are caveats or local
+  technical conditions.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
