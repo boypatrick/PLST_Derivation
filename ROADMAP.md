@@ -614,6 +614,8 @@ consistency checks, not new theory tasks.
 - Confirm that the one-family hypercharge section keeps the minimal-content,
   Yukawa-invariance, anomaly-cancellation, and normalization/global-group
   caveats.
+- Confirm that the BPS-compatible Dolbeault motivation remains a short remark,
+  not a new unconditional string/QG vacuum-selection theorem.
 - Confirm final PDF presentation: page breaks, equation numbering, references,
   bibliography formatting, symbol consistency, and rendered overlines/accents.
 
