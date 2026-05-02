@@ -779,6 +779,34 @@ Verification:
 - Removed the in-paper table of contents and the custom `geometry` layout.
 - Left the theory structure unchanged; this is a presentation/style pass only.
 
+### R26. Final Float-Placement Polish
+
+Status: completed.
+
+This is a final visual-flow pass after the APS/REVTeX formatting update.  It
+does not change the theorem, equations, or assumptions.
+
+Required edits:
+
+- Keep Fig. 3 and Fig. 4 before Theorem 1 so the theorem proof is not
+  interrupted by floats.
+- Move Fig. 6 to the start of Section IX so it acts as a roadmap for the
+  post-index interface and does not split the opening definition sentences.
+- Confirm that Fig. 2 uses the correct two-center convention
+  `r_\pm=sqrt(rho^2+(z_ax \mp D/2)^2+epsilon^2)`.
+- Confirm that no unconditional wording such as "the theory has exactly" has
+  returned.
+
+Verification:
+
+- Added a `FloatBarrier` after Fig. 4, forcing Fig. 3/Fig. 4 to appear before
+  Theorem 1 and leaving the Riemann--Roch/Serre-duality proof uninterrupted.
+- Moved Fig. 6 immediately after the Section IX heading and before the
+  formation/visibility explanatory paragraphs.
+- Recompiled the PDF and spot-rendered the theorem and Section IX pages.
+- Confirmed the Fig. 2 source uses `\mp` and the conclusion keeps conditional
+  protected-sector wording.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
