@@ -880,6 +880,20 @@ Verification:
   unqualified `first-principles`, `the theory predicts`, `theory has exactly`,
   or `no fourth generation` language remains.
 
+### R30. Fig. 2 Projection-Sphere Label Clearance
+
+Status: completed.
+
+This is a final layout-only correction for the two-center projection figure.
+
+Verification:
+
+- Moved the \(p_-\) label on the \(\mathbb{CP}^1\) sphere to the right of the
+  lower branch point instead of directly below it.
+- Lowered the divisor/output box under the sphere so the branch-point label and
+  the object box no longer visually overlap.
+- No theorem text, assumptions, or physics content changed.
+
 ## Do Not Reopen
 
 - Do not restore comparison tables to the main paper.
