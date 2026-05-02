@@ -687,6 +687,45 @@ Verification:
   Table I, and the new caveat language; visually spot-checked the changed
   figure pages.
 
+### R24. Final PRD Candidate Micro-Polish
+
+Status: completed.
+
+This is the last small polish pass before treating the manuscript as a PRD
+Regular Article candidate draft.
+
+Required edits:
+
+- Lower the conclusion wording from "the theory has exactly three..." to a
+  conditional statement about the protected SM-charged generation sector.
+- Add the denominator-positive domain for the conditional probability law
+  `P_N(t;D,eta)`, including the `t -> 0^+` limit when at least one effective
+  formation rate is positive.
+- Reduce the Fig. 3/Fig. 4 float-induced whitespace without letting the
+  ordinary-spin remark be split by figures.
+- Add only minimal extra family/string-cohomology background references, if
+  useful for the introduction.
+
+Acceptance criteria:
+
+- `paper/main.pdf` compiles without undefined references or citations.
+- Final PDF text-layer checks show the new probability caveat, softened
+  conclusion wording, and added references.
+- The visually checked figure pages remain clean.
+
+Verification:
+
+- Conclusion wording now attributes the exact three-family result to the
+  protected SM-charged generation sector under the stated projection and
+  gap/exclusivity assumptions.
+- Added the denominator-positive domain and the `t -> 0^+` rate-weighted
+  conditional probability limit for `P_N(t;D,eta)`.
+- Removed the post-Fig. 4 float barrier so the theorem text fills the former
+  whitespace while keeping Fig. 3/Fig. 4 outside the ordinary-spin remark.
+- Added two minimal heterotic Standard Model background references to the
+  introductory compactification citation cluster.
+- Recompiled the PDF and visually spot-checked pages 11--12.
+
 ### Final Proofreading Checklist
 
 Status: active.

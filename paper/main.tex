@@ -104,7 +104,7 @@ This paper addresses only the multiplicity problem inside a conditional PSLT pro
 It does not derive the two-center projection data from a UV-complete quantum-gravity vacuum, and it does not attempt to explain Yukawa hierarchies, CKM or PMNS mixing, or the detailed mass spectrum.
 
 Index-theoretic generation counting is a standard tool in field theory and compactification problems \cite{AtiyahSinger1968,LawsonMichelsohn1989}.
-Related cohomological or topological mechanisms for chiral matter appear in heterotic, brane, and F-theory constructions \cite{Candelas1985,Witten1986,Blumenhagen2007,BeasleyHeckmanVafa2009}.
+Related cohomological or topological mechanisms for chiral matter appear in heterotic, brane, and F-theory constructions \cite{Candelas1985,Witten1986,BraunHeOvrutPantev2005,BouchardDonagi2005,Blumenhagen2007,BeasleyHeckmanVafa2009}.
 The specific claim here is narrower: within the PSLT protected generation sector, the two-center branch divisor \(R=p_+ + p_-\) is identified with the generation line bundle \(L_R=\cO(R)\simeq\cO(2)\), so the SM family multiplicity is the Spin\(^c\) Dolbeault index of \((\CP^1,\cO(2))\).
 The novelty is therefore the physical identification of the PSLT two-center projection divisor as the generation line bundle, not the elementary Riemann--Roch calculation \(h^0(\CP^1,\cO(2))=3\) by itself.
 
@@ -747,7 +747,6 @@ An ordinary spin Dirac operator on \(\CP^1\) includes \(K_C^{1/2}=\cO(-1)\); twi
 Thus the Spin\(^c\) carrier is part of the stated protected sector, not an interchangeable notation.}
 \label{fig:spinc_vs_spin}
 \end{figure}
-\FloatBarrier
 
 % ============================================================
 \section{Three-Generation Theorem}
@@ -1591,6 +1590,20 @@ B_Kg_K^{\rm chiral}\left(1-\ee^{-\Gamma_K^{\rm eff}(D,\eta)t}\right)
 }
 \label{eq:PN}
 \end{equation}
+Equation~\eqref{eq:PN} is understood for \(t>0\) and for parameter values for which the denominator is nonzero.
+At \(t=0\), or if all effective formation rates vanish, the conditional observation probability is not defined.
+When the rate-weighted denominator is nonzero, the right limit is
+\begin{equation}
+P_N(0^+;D,\eta)
+=
+\frac{
+B_Ng_N^{\rm chiral}\Gamma_N^{\rm eff}(D,\eta)
+}{
+\sum_{K=1}^{3}
+B_Kg_K^{\rm chiral}\Gamma_K^{\rm eff}(D,\eta)
+}.
+\label{eq:PN_zero_plus}
+\end{equation}
 
 % ============================================================
 \section{Limitations and Outlook}
@@ -1615,7 +1628,7 @@ The two-center PSLT projection data determine the divisor \(R=p_+ + p_-\) and th
 The SM-charged internal fermions are governed by the product Dirac action on \(M_4\times C\), with the internal Spin\(^c\) Dolbeault--Dirac operator acting on \(\Lambda^{0,*}T^*C\otimes L_R\).
 The bundle \(L_R\) is the auxiliary Dolbeault twist, and the positive and negative internal zero modes are \(H^0(C,L_R)\) and \(H^1(C,L_R)\).
 Riemann--Roch gives index three, and Serre duality gives \(H^1(C,L_R)=0\).
-Thus, conditional on the PSLT two-center projection data and with all additional SM-charged sectors either absent from the kernel or fully paired by a gauge-invariant mass map, the theory has exactly three low-energy chiral SM generations and no unpaired light SM-charged exotics.
+Thus, conditional on the PSLT two-center projection data and the stated gap/exclusivity assumptions, the protected SM-charged generation sector contributes exactly three low-energy chiral SM family copies, with no additional unpaired light SM-charged exotics arising from the allowed extra sectors.
 
 After the raw scalarization operator \(\widetilde{\mathcal C}_D\), the normalized profile map \(c_D\), the spectral weights \(\mu_{nN}\), and, when the locking gap exists, the hard map \(\mathcal I_D:u_N\mapsto\psi_N^{\rm lock}\), the scalar two-center spectral operator and the quantities \((g_N^{\rm chiral},\Gamma_N^{\rm eff},B_N,P_N)\) define an effective model for how these three protected modes form and couple to the visible sector.
 They are coarse-grained phenomenological structures on top of the Spin\(^c\) generation theorem, not substitutes for it.
@@ -1683,6 +1696,18 @@ Nucl. Phys. B \textbf{258}, 46 (1985).
 E.~Witten,
 ``New issues in manifolds of \(SU(3)\) holonomy,''
 Nucl. Phys. B \textbf{268}, 79 (1986).
+
+\bibitem{BraunHeOvrutPantev2005}
+V.~Braun, Y.-H.~He, B.~A.~Ovrut, and T.~Pantev,
+``A heterotic standard model,''
+Phys. Lett. B \textbf{618}, 252 (2005),
+arXiv:hep-th/0501070.
+
+\bibitem{BouchardDonagi2005}
+V.~Bouchard and R.~Donagi,
+``An \(SU(5)\) heterotic standard model,''
+Phys. Lett. B \textbf{633}, 783 (2006),
+arXiv:hep-th/0512149.
 
 \bibitem{Blumenhagen2007}
 R.~Blumenhagen, B.~Kors, D.~L\"ust, and S.~Stieberger,
